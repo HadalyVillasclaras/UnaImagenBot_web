@@ -1,0 +1,705 @@
+@charset "UTF-8";
+
+@font-face{
+	font-family: "Arachne";
+	src: url("Arachne-Demigod.otf");
+}
+ 
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300&display=swap');
+
+
+:root{
+    /*Colors*/
+    --dark-blue: #0C044E;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, button, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+    font-family: 'Arachne'; 
+    font-weight: 100;
+	vertical-align: baseline;
+    color: var(--dark-blue);
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+p{ 
+    font-family: 'Darker Grotesque', sans-serif; 
+    font-size: 2vw;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+	text-shadow: 0 0 15px #ffffff;
+    cursor:pointer ;
+}
+
+
+/*Headers*/
+h1{
+    font-size: 6vw;
+}
+
+h2{
+    font-size: 4vw;
+}
+
+h3{
+    font-size: 2.7vw; 
+    margin: 1.8vw 0;
+}
+
+h4{
+    font-size:1.4vw;
+}
+
+
+
+@media only screen and (max-width: 769px){
+    p{
+        font-size: 6.3vw;
+    }
+     
+    h1{
+        font-size: 12vw;
+    }
+
+    h2{
+        font-size: 8vw;
+        
+    }
+
+    h3{
+        font-size: 7.5vw; 
+        margin: 2.5vw 0;
+        line-height: 11vw;
+    }
+    
+    h4{
+        font-size: 5.1vw;
+        margin-top: 3vw;
+        line-height: 8vw;
+    }
+}
+
+@media (min-width: 770px) and (max-width: 900px){
+    p{
+        font-size: 4.8vw;
+    }
+    h1{
+        font-size: 11vw;
+    }
+
+    h2{
+        font-size: 7vw;
+        
+    }
+
+    h3{
+        font-size: 5.5vw; 
+        margin: 2.5vw 0;
+        line-height: 8vw;
+    }
+    
+    h4{
+        font-size: 3vw;
+        margin-top: 3vw;
+    }
+}
+
+
+
+button{
+    border: none;
+	background: none;
+    cursor: pointer;
+ }
+
+ button:hover{
+	text-shadow: 0 0 15px #ffffff;
+}
+
+
+/*Sections*/
+section{
+    width: 100%;
+    height: 100vh;
+    padding: 10% 8%;
+}
+
+.section-100pheight{
+    height: 100%;
+}
+.section-bg{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+section#home{
+    padding: 0%;
+}
+
+
+section#end{
+    padding: 10% 4% 3% 4%;
+}
+
+
+@media only screen and (max-width: 900px){
+    section{
+        padding:10% 6%;
+    } 
+
+    section#tb2{
+        height: 100%;
+        padding: 15% 6%;
+    }
+
+    section#tb3{
+        height: 100%; 
+    }
+
+    section#end{ 
+        padding: 15% 6% 6% 6%;
+    }
+}
+/*Sections bg*/
+#home{
+    background-image: url(img/bg1.png);
+}
+
+#intro{
+    background-image: url(img/bg2.png); 
+}
+
+#def{
+    background-image: url(img/bg3.png);
+}
+
+#tb1{
+    background-image: url(img/bg-utb1.png); 
+}
+
+#tb2{
+    background-image: url(img/bg-utb2.png);
+}
+
+#tb3{
+    background-image: url(img/bg-utb-3.png);
+}
+
+#end{
+    background-image: url(img/bg-end.png);
+    height: 100%;
+}
+
+
+@media only screen and (max-width: 900px){
+    #home{
+        background-image: url(img/bg1-mb.png);
+    }
+
+    #intro{
+        background-image: url(img/bg2-mb.png); 
+    }
+
+    #def{
+        background-image: url(img/bg3-mb.png);
+    }
+
+    #tb1{
+        background-image: url(img/bg-utb1-mb.png); 
+    }
+
+    #tb2{
+        background-image: url(img/bg-utb2-mb.png);
+    }
+
+    #tb3{
+        background-image: url(img/bg-utb3-mb.png);
+    }
+
+    #end{
+        background-image: url(img/bg-end-mb.png);
+    }
+}
+
+
+
+
+/*Ornaments*/
+.gradient-top{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 1;
+    background-image: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0));
+}
+
+
+/*No wrap words*/
+.no-wrap{
+    white-space: nowrap;
+}
+
+/*line-break*/
+.lb{
+    display: none;
+}
+
+@media only screen and (max-width: 900px){
+    .lb{
+        display: block;
+    }
+}
+
+/*Scrollbar*/
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 12px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #8FB9F0; 
+    /* box-shadow: inset 0 0 1px var(--dark-blue); */
+    
+  }
+  /* ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 1px var(--dark-blue); 
+    border-radius: 10px;
+  } */
+
+
+/*Animations*/
+@keyframes float {
+	0% {
+		drop-shadow: 0 5px 15px 0px rgb(255, 0, 0);
+		transform: translatey(0px)
+			translatex(0px);
+	}
+	50% {
+		drop-shadow: 0 25px 15px 0px rgb(255, 0, 0);
+		transform: translatey(-6px) translatex(-2px);
+	}
+	100% {
+		drop-shadow: 0 5px 15px 0px rgb(255, 0, 0);
+		transform: translatey(0px) translatex(0px);
+	}
+}
+
+.uib-animation{
+    /* animation: float 6s ease-in-out  infinite; */
+}
+
+
+
+
+/*Home*/
+.home-wrap{
+    position: relative;
+    width: 100%;
+    height: 95%;
+    display: flex; 
+    flex-direction: column;   
+    justify-content: center; 
+    align-items: center;
+    overflow: hidden;
+}
+
+#uib-frame{
+    width: 50%; 
+}
+
+#uib-frame-mbl{
+    display: none;
+}
+
+
+.h1-wrapper{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+ 
+
+@media only screen and (max-width: 900px){
+    #uib-frame{
+        display: none;
+    }
+
+    #uib-frame-mbl{
+        display: block;
+        width: 100%; 
+        width: 115%;
+        overflow: hidden;
+    }
+}
+
+ 
+
+/*Intro*/
+.intro-wrap{
+    position: relative;
+    width: 65%;
+    height: 100%;
+    min-width: 700px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+@media only screen and (max-width: 900px){
+    
+    #intro{
+        height: 100%;
+        padding: 30% 6%;
+    }
+
+    .intro-wrap{
+        width: 100%;
+        min-width: 100%; 
+    }
+}
+ 
+
+
+ 
+
+/*Definition*/
+.def-wrap{
+    position: relative; 
+    height: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.def-wrap img{
+    position: relative;
+    max-width: 35%; 
+    min-width: 400px; 
+    right: 3vw;
+      
+}
+ 
+
+.def-scroll-wrap{
+    width: 53%;
+}
+
+.def-scroll{ 
+    margin-top: 1em;
+    padding: 10px; 
+    height: 24em;
+    overflow: -moz-scrollbars-vertical; 
+    overflow-y: scroll;
+}
+
+.def-wrap a{
+    display: none; 
+}
+
+@media only screen and (max-width: 900px){
+    .def-wrap{
+        flex-direction: column; 
+    }
+
+    .def-scroll-wrap{
+        width: 100%;
+    }
+
+    .def-wrap img{
+        min-width: 99%;
+        transform: rotate(90deg);
+        right: 0;
+        margin: -9% 0;
+    }
+
+    .def-scroll{ 
+        height: 100%;
+        overflow-y: hidden;
+        margin-bottom: 3rem;
+        padding: 0;
+    }
+
+    .def-wrap a{
+        display: none;
+        margin-bottom: 4rem;
+        align-self: end;
+    }
+
+    .def-wrap h2{
+        display: none;
+    }
+
+  
+}
+
+
+/*--------TwitterBot--------*/
+.tb1{ 
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.tb1-def{
+    width: 50%;
+}
+
+.tb1 img{
+    position: relative;
+    top: 20%;
+    width: 37%;  
+    margin: 5% 0;
+
+}
+
+.twitter-timeline{
+    align-self: center;
+    justify-self: center;
+    width: 70%; 
+}
+
+#tb-icon{
+    display: none;
+}
+
+
+@media (min-width: 770px) and (max-width: 900px){
+    .tb1 img{
+        width: 95%; 
+    }
+}
+
+@media only screen and (max-width: 769px){
+    .tb1 img{
+        width: 110%; 
+    }
+}
+
+
+
+@media only screen and (max-width: 900px){
+    #tb1{
+        height: 100%;
+    }
+
+    .tb1{ 
+        position: relative;
+        top: -39px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .tb1-def{
+        width: 100%;
+        
+    }
+
+    .tb1 img{ 
+        margin-top: 5%;
+        overflow: hidden;
+    }
+
+    #tb-icon{
+        display: block;
+        padding: 4% 0;
+        width: 40%; 
+        transform: rotate(-5deg);
+    }
+}
+
+/*tb2*/
+.tb2 h3{
+    margin: 0 auto;
+    width: 60%;
+    min-width: 600px;
+    text-align: center;
+}
+
+ .tb2-slide{
+     margin: 5% auto;
+     width: 80%;
+ }
+
+ .slide-imgs{
+     width: 50%;
+     margin: 10% auto;
+ }
+
+.slide-botons{ 
+    display: flex;
+    justify-content: space-between; 
+    font-size: 1.5vw;
+}
+
+.slide-boton{
+    display: flex;
+    min-width: 100px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.slide-botons img{
+    width: 50px;
+}
+
+.slide-boton:first-child img{
+    transform: rotate(180deg);
+
+} 
+
+@media only screen and (max-width: 900px){
+    .tb2 h3{
+        min-width: 100%;
+        text-align: left;
+    }
+
+    .tb2-slide{
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .slide-imgs{
+        width: 80%;
+        margin: 20% auto;
+    }
+
+    .slide-botons img{
+        width: 35px;
+    }
+
+}
+
+@media only screen and (max-width: 900px){
+    .slide-imgs{
+        width: 100%; 
+    }
+
+    .slide-botons{  
+        font-size: 5vw;
+    }
+}
+
+/*tb3*/
+.tb3{
+    position: relative; 
+    height: 100vh;
+    width: 100%;
+}
+
+.tb3-find{
+    padding-bottom: 25%;
+}
+
+
+#tb3-icon:after { 
+    position: absolute;
+    width: 70px;
+	height: 70px;
+	content: ""; 
+	background: url("img/twitterbot-icon.png") no-repeat ;
+	background-size: contain;
+    transform: rotate(7deg);
+}
+
+.tb3-link{
+    position: relative;
+    text-align: right;
+}
+
+.tb3-link a{
+    font-size: 6vw;
+}
+
+.tb3-link *{
+    vertical-align: middle;
+    height: 2.5em;
+}
+
+
+@media only screen and (max-width: 900px){
+    .tb3{
+        height: 100%;
+    }
+
+    .tb3-find{
+        padding-bottom: 55%;
+    }
+
+    .tb3-link a{
+        font-size: 9vw;
+    }
+
+    .tb3-link *{
+        vertical-align: middle;
+        height: 5vw;
+    }
+}
+
+
+/*Footer*/
+.end{
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    height: 100%;
+    justify-content: space-between;
+}
+
+.end img{
+    position: relative;
+    margin: 5% auto 20% auto;
+    width: 50%;
+    min-width: 600px;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between; 
+}
+
+
+@media only screen and (max-width: 900px){
+    .end img{
+        min-width: 100%;
+    }
+
+    .footer{
+        display: block; 
+    }
+}
+
+ 
+
+
+
+
+
+
