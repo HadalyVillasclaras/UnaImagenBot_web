@@ -9,8 +9,12 @@
 
 
 :root{
-    /*Colors*/
     --dark-blue: #0C044E;
+    --body-bg-color: #ffe6c1;
+}
+
+body {
+    background-color: var(--body-bg-color);
 }
 
 html, body, div, span, applet, object, iframe,
@@ -152,14 +156,28 @@ button {
 
 /* Sections */
 section {
+    position: relative;
     width: 100%;
     height: 100vh;
     padding: 10% 8%;
 }
 
+section::before {
+    content: "";
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.9;
+    z-index: -99;
+}
+
 .section-100pheight {
     height: 100%;
 }
+
 
 .section-bg {
     background-repeat: no-repeat;
@@ -170,10 +188,9 @@ section#home {
     padding: 0%;
 }
 
-section#end{
+section#end { 
     padding: 10% 4% 3% 4%;
 }
-
 
 @media only screen and (max-width: 900px) {
     section {
@@ -195,36 +212,46 @@ section#end{
 }
 /* Sections bg */
 #home {
-    background-image: url(img/bg1.png);
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+#home::before {
+    background-image: url(img/bg1-.png);
 }
 
 #intro {
-    background-image: url(img/bg2.png); 
 }
 
-#def {
-    background-image: url(img/bg3.png);
+#intro::before {
+    background-image: url(img/bg2-.png);
 }
 
-#tb1 {
-    background-image: url(img/bg-utb1.png); 
+#def::before {
+    background-image: url(img/bg3-.png);
 }
 
-#tb2 {
-    background-image: url(img/bg-utb2.png);
+#tb1::before {
+    background-image: url(img/bg-utb1-.png); 
+
 }
 
-#tb3 {
+#tb2::before {
+    background-image: url(img/bg-utb2-.png);
+}
+
+#tb3::before {
     background-image: 
         radial-gradient(
             ellipse 30vw 15vh, rgba(255, 255, 255, 0.73), rgba(255, 255, 255, 0)
         ),
-        url(img/bg-utb-3.png);
+        url(img/bg-utb-3-.png);
         background-position: 3vw 18vw, 0 0;
 }
 
-#end {
-    background-image: url(img/bg-end.png);
+#end::before {
+    background-image: url(img/bg-end-.png);
 
 }
 
