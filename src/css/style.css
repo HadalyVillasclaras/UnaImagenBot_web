@@ -1,19 +1,23 @@
-@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300&display=swap');
 
 @font-face{
 	font-family: "Arachne";
-	src: url("Arachne-Demigod.otf");
+	src: url("../assets/Arachne-Demigod.otf");
 }
  
-@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300&display=swap');
-
+#scrollbar {
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+  }
 
 :root{
     --dark-blue: #0C044E;
-    --body-bg-color: #ffe6c1;
+    --body-bg-color: #8ccfff;
 }
 
 body {
+    min-height: 100vh; 
     background-color: var(--body-bg-color);
 }
 
@@ -27,8 +31,8 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
+figure, figcaption, footer, header,
+menu, nav, output, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
@@ -159,47 +163,41 @@ section {
     position: relative;
     width: 100%;
     height: 100vh;
-    padding: 10% 8%;
-}
+    background-repeat: no-repeat;
 
-section::before {
-    content: "";
-    background-size: cover;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.9;
-    z-index: -99;
 }
 
 .section-100pheight {
     height: 100%;
 }
 
-
-.section-bg {
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-
 section#home {
     padding: 0%;
 }
 
-section#end { 
-    padding: 10% 4% 3% 4%;
+section > div {
+    padding: 10% 8%;
+}
+
+section::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-size: cover;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.9;
+    z-index: -99;
+    background-repeat: no-repeat;
+    background-position: center top;
 }
 
 @media only screen and (max-width: 900px) {
-    section {
-        padding:10% 6%;
-    } 
-
     section#tb2 {
         height: 100%;
-        padding: 15% 6%;
     }
 
     section#tb3 {
@@ -207,38 +205,30 @@ section#end {
     }
 
     section#end { 
-        padding: 15% 6% 6% 6%;
     }
 }
+
 /* Sections bg */
-#home {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-}
 
 #home::before {
-    background-image: url(img/bg1-.png);
-}
-
-#intro {
+    background-image: url(../assets/img/bg/bg1-light.png);
 }
 
 #intro::before {
-    background-image: url(img/bg2-.png);
+    background-image: url(../assets/img/bg/bg2-light.png);
 }
 
 #def::before {
-    background-image: url(img/bg3-.png);
+    background-image: url(../assets/img/bg/bg3-light.png);
 }
 
 #tb1::before {
-    background-image: url(img/bg-utb1-.png); 
+    background-image: url(../assets/img/bg/bg4-tw1-light.png); 
 
 }
 
 #tb2::before {
-    background-image: url(img/bg-utb2-.png);
+    background-image: url(../assets/img/bg/bg5-tw2-light.png);
 }
 
 #tb3::before {
@@ -246,48 +236,47 @@ section#end {
         radial-gradient(
             ellipse 30vw 15vh, rgba(255, 255, 255, 0.73), rgba(255, 255, 255, 0)
         ),
-        url(img/bg-utb-3-.png);
+        url(../assets/img/bg/bg6-tw3-light.png);
         background-position: 3vw 18vw, 0 0;
 }
 
 #end::before {
-    background-image: url(img/bg-end-.png);
+    background-image: url(../assets/img/bg/bg7-end-light.png);
 
 }
 
-
 @media only screen and (max-width: 900px) {
-    #home {
-        background-image: url(img/bg1-mb.png);
+    #home::before {
+        background-image: url(../assets/img/bg/bg1-light-mb.png);
     }
 
-    #intro {
-        background-image: url(img/bg2-mb.png); 
+    #intro::before {
+        background-image: url(../assets/img/bg/bg2-light-mb.png); 
     }
 
-    #def {
-        background-image: url(img/bg3-mb.png);
+    #def::before {
+        background-image: url(../assets/img/bg/bg3-light-mb.png);
     }
 
-    #tb1 {
-        background-image: url(img/bg-utb1-mb.png); 
+    #tb1::before {
+        background-image: url(../assets/img/bg/bg4-tw1-light-mb.png); 
     }
 
-    #tb2 {
-        background-image: url(img/bg-utb2-mb.png);
+    #tb2::before {
+        background-image: url(../assets/img/bg/bg5-tw2-light-mb.png);
     }
 
-    #tb3 {
+    #tb3::before {
         background-image: 
         radial-gradient(
             ellipse 30vw 15vh, rgba(255, 255, 255, 0.73), rgba(255, 255, 255, 0)
         ),
-        url(img/bg-utb3-mb.png);
+        url(../assets/img/bg/bg6-tw3-light-mb.png);
         background-position: 3vw 18vw, 0 0;
     }
 
-    #end {
-        background-image: url(img/bg-end-mb.png);
+    #end::before {
+        background-image: url(../assets/img/bg/bg7-end-light-mb.png);
     }
 }
 
@@ -312,6 +301,11 @@ section#end {
     background-color: #8FB9F0; 
   }
 
+  ::-webkit-scrollbar-track {
+    background: var(--dark-blue); 
+  }
+
+
 /*Animations*/
 @keyframes float {
 	0% {
@@ -330,6 +324,7 @@ section#end {
 }
 
 /* S E C T I O N S */
+
 /*Home*/
 .home-wrap {
     width: 100%;
@@ -379,10 +374,6 @@ section#end {
 }
 
 @media only screen and (max-width: 900px) {
-    #intro {
-        height: 100%;
-        padding: 30% 6%;
-    }
 
     .intro-wrap {
         width: 100%;
@@ -416,6 +407,10 @@ section#end {
     height: 24em;
     overflow: -moz-scrollbars-vertical; 
     overflow-y: scroll;
+}
+
+.def-scroll::-webkit-scrollbar-track {
+    background: none; 
 }
 
 .def-wrap a {
@@ -521,6 +516,7 @@ section#end {
 
     #tb-icon {
         display: block;
+        top: 0;
         padding: 4% 0;
         width: 40%; 
         transform: rotate(-5deg);
@@ -600,8 +596,6 @@ section#end {
 /*tb3*/
 .tb3{
     position: relative; 
-    height: 100vh;
-    width: 100%;
 }
 
 .tb3-find{
@@ -613,7 +607,7 @@ section#end {
     width: 70px;
 	height: 70px;
 	content: ""; 
-	background: url("img/twitterbot-icon.png") no-repeat ;
+	background: url("../assets/img/twitterbot-icon.png") no-repeat ;
 	background-size: contain;
     transform: rotate(7deg);
 }
@@ -651,12 +645,11 @@ section#end {
     }
 }
 
-/*Footer*/
+/* Ending */
 .end {
     position: relative;
     display: flex;
     flex-direction: column; 
-    height: 100%;
     justify-content: space-between;
 }
 
