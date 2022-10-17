@@ -2,7 +2,6 @@
   "name": "unaimagenbot_web",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
@@ -20,5 +19,8 @@
   "homepage": "https://github.com/HadalyVillasclaras/UnaImagenBot_web#readme",
   "devDependencies": {
     "parcel": "^2.7.0"
+  },
+  "dependencies": {
+    "smooth-scrollbar": "^8.8.1"
   }
 }
