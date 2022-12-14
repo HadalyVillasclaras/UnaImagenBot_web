@@ -2,6 +2,8 @@
 <html lang="es">
 <head>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/magik.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300&display=swap" rel="stylesheet">
@@ -13,10 +15,13 @@
 </head>
 <body id="scrollbar">
     <div class="gradient-top"></div>
+    <div id="shine1"></div>
+    <div id="shine2"></div>
+    <div id="shine3"></div>
 
     <!-----------Home----------->
     <section id="home" class="section-bg" >
-        <div class="home-wrap">
+        <div class="home-wrap hide">
             <img id="uib-frame" class="uib-animation" src="assets/img/uib-frame.png" alt="Digital illustration of a plain horizontal position white rectangle with blue sparkles in the frame corners.">
             <img id="uib-frame-mbl" class="uib-animation" src="assets/img/uib-frame-mbl.png" alt="Digital illustration of a plain vertical position white rectangle with blue sparkles in the frame corners.">
             <div class="h1-wrapper">
@@ -27,7 +32,7 @@
 
     <!-----------Definition----------->
     <section id="intro" class="section-bg"> 
-        <div class="intro-wrap">
+        <div class="intro-wrap hide">
             <h3>Una Imagen Bot es un espacio para explorar el paisaje visual propio,</h3>
             <h3>una herramienta que invita a imaginar nuevas representaciones posibles de lo real</h3>
         </div>
@@ -35,7 +40,7 @@
 
     <section id="def" class="section-bg section-100pheight">
         
-        <div class="def-wrap">
+        <div class="def-wrap hide">
             <img class="uib-animation" src="assets/img/uib-frame-ver.png" alt="Digital illustration of a plain vertical position white rectangle with blue sparkles in the frame corners">
             <div class="def-scroll-wrap">
                 <h2>Una Imagen Bot</h2>
@@ -54,7 +59,7 @@
 
     <!-----------TwitterBot----------->
     <section id="tb1" class="section-bg"> 
-        <div class="tb1">
+        <div class="tb1 hide">
             <img id="tb-icon" src="assets/img/twitterbot-icon.png" alt="Twitter logo in a plain white square with blue sparkles around the frame.">
             <div class="tb1-def">
                 <h3>Una Imagen Bot propone imágenes posibles a traves de un Twitter Bot</h3><br> 
@@ -67,7 +72,7 @@
     </section>
 
     <section id="tb2" class="section-bg"> 
-        <div class="tb2">
+        <div class="tb2 hide">
             <h3>Cada twit propone una imagen posible de forma aleatoria y automática, sin intervención humana</h3>
             <div class="tb2-slide">
                 <div class="slide-imgs"> 
@@ -119,7 +124,7 @@
     </section>
 
     <section id="tb3" class="section-bg"> 
-        <div class="tb3">
+        <div class="tb3 hide">
             <div class="tb3-find">
                 <h2>Encuentra a<br>Una Imagen Bot</h2>
                 <h2 id="tb3-icon">en Twitter</h2>
@@ -134,7 +139,7 @@
 
     <!-----------Ending----------->
     <section id="end" class="section-bg section-100pheight">
-        <div class="end">
+        <div class="end hide">
             <img src="assets/img/uib-frame.png" alt="Digital illustration of a plain horizontal position white rectangle with blue sparkles in the frame corners.">
             <div class="footer">
                 <h4>Una Imagen Bot ha sido diseñado y desarrollado por <span class="no-wrap">Hadaly Villasclaras</span>. <br>
@@ -146,7 +151,7 @@
         </div>
     </section>
     
-
-    <script type="module" src="index.js"></script>
+    <script src="./js/parallax.js" type="text/javascript"></script>
+    <script src="./js/intersection-observer.js"></script>
 </body>
 </html>

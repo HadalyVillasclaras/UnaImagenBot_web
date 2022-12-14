@@ -1,0 +1,81 @@
+
+/*INTERSECTION OBSERVER
+***Show elements on scroll*/
+
+.hide{
+    opacity: 0;
+    filter: blur(1.5px);
+    transition: all 1.2s;
+}
+
+.showup {
+    opacity: 1;
+    filter: blur(0);
+}
+
+@media(prefers-reduced-motion) {
+    .show-article{
+        transition: none;
+    }
+}
+
+
+/*Shiny parallax*/
+#shine1, #shine2, #shine3{
+    position: fixed; 
+    width: 100%; 
+    height: 6000px;
+    top: 0;
+    z-index: -1;
+}
+
+#shine1 {
+    filter: blur(20px);
+    opacity: 0.8;
+    background-image: 
+        radial-gradient( circle 400px, rgba(251, 253, 240, 0.89) 0%, rgba(0, 38, 255, 0) 100% ), 
+        radial-gradient( circle 400px, rgba(231, 255, 233, 0.83) 0%, rgba(0, 30, 255, 0) 100% );
+    background-repeat: no-repeat;
+    background-size: 1100px 1100px , 800px 800px;
+    background-position: -150px 300px, 130% -80px;
+}
+
+#shine2 {
+    filter: blur(20px);
+    opacity: 0.4;
+    background-image: 
+        radial-gradient( circle 500px,
+            rgba(213, 240, 255, 0.886) 0%, rgba(93, 0, 255, 0) 100% 
+        ),
+        radial-gradient( circle 600px,
+            rgb(209, 244, 254) 0%, rgba(8, 0, 255, 0) 100% 
+        );
+    background-repeat: no-repeat;
+    background-size: 1000px 1000px , 1200px 1200px;
+    background-position: 200px -300px, 110% 1200px;
+
+}
+
+#shine3 {
+    filter: blur(20px);
+    opacity: 0.6;
+    /* background-image: 
+        radial-gradient( circle 400px,
+            rgb(252, 230, 252) 0%, rgba(0, 55, 255, 0) 100% 
+        ); */
+    background-image: radial-gradient( circle 400px,
+        hsla(0deg 0% 100%) 0%,
+        hsla(216deg 90% 99%) 11%,
+        hsla(216deg 90% 98% / .9) 22%,
+        hsla(216deg 90% 98% / .8) 33%,
+        hsla(216deg 90% 97% / .6) 44%,
+        hsla(216deg 90% 96% / .4) 56%,
+        hsla(216deg 90% 95% / .3) 67%,
+        hsla(216deg 90% 94% / .2) 78%,
+        hsla(215deg 90% 93% / .1) 88%,
+        hsla(215deg 89% 93% / 0) 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 900px 900px;
+    background-position: 110% 1300px;
+}
