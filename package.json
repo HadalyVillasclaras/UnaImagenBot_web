@@ -2,25 +2,20 @@
   "name": "unaimagenbot_web",
   "version": "1.0.0",
   "description": "",
-  "source": "src/index.html",
-  "type": "module",
+  "main": "index.js",
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HadalyVillasclaras/UnaImagenBot_web.git"
   },
-  "author": "Hadaly Villasclaras",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/HadalyVillasclaras/UnaImagenBot_web/issues"
   },
   "homepage": "https://github.com/HadalyVillasclaras/UnaImagenBot_web#readme",
-  "devDependencies": {
-    "parcel": "^2.7.0"
-  },
   "dependencies": {
     "smooth-scrollbar": "^8.8.1"
   }
