@@ -6,10 +6,40 @@
 }
 
 :root{
-    --dark-blue: #0C044E;
     --body-bg-color: #8ccfff;
+    --text-primary: #0C044E;
+    --background-opacity: 0.9;
+    --h1-color: #0C044E;
+
+    --gradient-top: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0));
+    --gradient-bottom: linear-gradient(to top, #ffffff, rgba(255, 255, 255, 0));
+
+
 }
 
+[data-theme='dark'] {
+    --text-primary: #cfd9e6;
+    --body-bg-color: #001a33;
+    --background-opacity: 0.1;
+    
+    --gradient-top: linear-gradient(to bottom, #031518, rgba(255, 255, 255, 0));
+    --gradient-bottom: linear-gradient(to top, #031518, rgba(255, 255, 255, 0));
+
+
+}
+
+#theme-toggle {
+    z-index: 99;
+    position: fixed;
+    top: 2rem;
+    right: 3rem;
+}
+
+.moon-icon, .sun-icon {
+    width: 30px;
+    height: 30px;
+    fill: var(--text-primary);
+}
 body {
     min-height: 100vh; 
     background-color: var(--body-bg-color);
@@ -35,7 +65,7 @@ time, mark, audio, video {
     font-family: 'Arachne'; 
     font-weight: 100;
 	vertical-align: baseline;
-    color: var(--dark-blue);
+    color: var(--text-primary);
     scroll-behavior: smooth;
     box-sizing: border-box;
 }
@@ -58,6 +88,7 @@ a:hover {
 /*Headings*/
 h1 {
     font-size: 6vw;
+    color: var(--h1-color);
 }
 
 h2 {
@@ -183,7 +214,7 @@ section::before {
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.9;
+    opacity: var(--background-opacity);
     z-index: -99;
     background-repeat: no-repeat;
     background-position: center top;
@@ -282,7 +313,17 @@ section::before {
     width: 100%;
     height: 70px;
     z-index: 1;
-    background-image: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0));
+    background-image: var(--gradient-top);
+}
+
+.gradient-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 1;
+    background-image: var(--gradient-bottom);
 }
 
 /*Scrollbar*/
@@ -296,7 +337,7 @@ section::before {
   }
 
   ::-webkit-scrollbar-track {
-    background: var(--dark-blue); 
+    background: var(--text-primary); 
   }
 
 
