@@ -39,6 +39,7 @@
     width: 30px;
     height: 30px;
     fill: var(--text-primary);
+    display: none;
 }
 body {
     min-height: 100vh; 
