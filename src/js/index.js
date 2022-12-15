@@ -24,23 +24,24 @@ function showDivs(n) {
 
 
 //DARK MODE
-let toggle = document.getElementById("theme-toggle");
-
-let storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+const toggle = document.getElementById("theme-toggle");
+const defaultMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+let storedTheme = localStorage.getItem('theme') || (defaultMode ? "dark" : "light");
 console.log(storedTheme);
 
 if (storedTheme)
     document.documentElement.setAttribute('data-theme', storedTheme)
 
-
 toggle.onclick = function() {
     let currentTheme = document.documentElement.getAttribute("data-theme");
-    let targetTheme = "light";
+    let newTheme = currentTheme === "light" ? "dark" : "light";
 
-    if (currentTheme === "light") {
-        targetTheme = "dark";
+    let themeMode = document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    if (themeMode === "light") {
+        document.getElementById("moon-icon").style.display = "block";
+    } else {
+        document.getElementById("sun-icon").style.display = "block";
     }
-
-    document.documentElement.setAttribute('data-theme', targetTheme)
-    localStorage.setItem('theme', targetTheme);
 };
