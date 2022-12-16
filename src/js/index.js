@@ -32,16 +32,18 @@ console.log(storedTheme);
 if (storedTheme)
     document.documentElement.setAttribute('data-theme', storedTheme)
 
+if (storedTheme === "light") {
+    document.getElementById("moon-icon").style.display = "block";
+} else {
+    document.getElementById("sun-icon").style.display = "block";
+}
+
 toggle.onclick = function() {
     let currentTheme = document.documentElement.getAttribute("data-theme");
     let newTheme = currentTheme === "light" ? "dark" : "light";
 
-    let themeMode = document.documentElement.setAttribute('data-theme', newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     
-    if (themeMode === "light") {
-        document.getElementById("moon-icon").style.display = "block";
-    } else {
-        document.getElementById("sun-icon").style.display = "block";
-    }
+
 };
