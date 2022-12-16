@@ -6,7 +6,7 @@ let options = {
 }
 
 
-function callback(entries) {
+function showUp(entries) {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('showup');
@@ -19,7 +19,7 @@ function callback(entries) {
 }
 
 
-let observer = new IntersectionObserver(callback, options);
+let observer = new IntersectionObserver(showUp, options);
 
 let target = document.querySelectorAll('.hide');
 target.forEach((trgt) => observer.observe(trgt));
