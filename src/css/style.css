@@ -33,14 +33,18 @@
     position: fixed;
     top: 2rem;
     right: 3rem;
+    background-color: transparent;
+    border: none;
 }
 
-.moon-icon, .sun-icon {
+#moon-icon, #sun-icon {
     width: 30px;
     height: 30px;
     fill: var(--text-primary);
+    stroke: var(--text-primary);
     display: none;
 }
+
 body {
     min-height: 100vh; 
     background-color: var(--body-bg-color);
