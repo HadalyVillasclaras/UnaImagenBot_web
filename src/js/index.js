@@ -1,5 +1,4 @@
 //Tweets slide
-
 let slideIndex = 1;
 showDivs(slideIndex);
 
@@ -23,25 +22,31 @@ function showDivs(n) {
 
 
 
-//DARK MODE
-const toggle = document.getElementById("theme-toggle");
-const defaultMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-let storedTheme = localStorage.getItem('theme') || (defaultMode ? "dark" : "light");
-console.log(storedTheme);
+/* Theme mode. 
+According to matchMedia / localStorage*/
+let themeMode = 'light';
+const button = document.getElementById("theme-toggle");
 
-if (storedTheme)
-    document.documentElement.setAttribute('data-theme', storedTheme)
+let defaultMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+themeMode = localStorage.getItem('theme') || (defaultMode ? "dark" : "light"); 
 
-toggle.onclick = function() {
-    let currentTheme = document.documentElement.getAttribute("data-theme");
-    let newTheme = currentTheme === "light" ? "dark" : "light";
+//set css data
+document.documentElement.setAttribute('data-theme', themeMode); 
 
-    let themeMode = document.documentElement.setAttribute('data-theme', newTheme);
+const switchButton = () => {
+    themeMode === "light" 
+    ?
+        document.getElementById("moon-icon").style.display = "block"
+    :
+        document.getElementById("sun-icon").style.display = "block"
+}
+
+switchButton();
+
+button.addEventListener("click", () => {
+    let newTheme = themeMode === "light" ? "dark" : "light";
     localStorage.setItem('theme', newTheme);
-    
-    if (themeMode === "light") {
-        document.getElementById("moon-icon").style.display = "block";
-    } else {
-        document.getElementById("sun-icon").style.display = "block";
-    }
-};
+    switchButton();
+
+    window.location.reload();
+});
