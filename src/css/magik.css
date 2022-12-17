@@ -2,19 +2,18 @@
 /*INTERSECTION OBSERVER
 ***Show elements on scroll*/
 
-.hide{
+.hidden {
+    color: transparent;
     opacity: 0;
-    filter: blur(1.5px);
-    transition: all 1.2s;
 }
 
-.showup {
+.on-show{
     opacity: 1;
-    filter: blur(0);
+    transition: 2s;
 }
 
 @media(prefers-reduced-motion) {
-    .show-article{
+    .on-show{
         transition: none;
     }
 }

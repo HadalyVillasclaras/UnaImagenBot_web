@@ -1,25 +1,18 @@
 
-let options = {
-    root: null, 
-    rootMargin: '-50%',
-    treshold: 1.0
-}
+const hiddenSects = document.querySelectorAll('.hidden');
 
+const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        console.log(entry.target);
+        entry.target.classList.toggle("on-show", entry.isIntersecting);
+        // if (entry.isIntersecting) sectionObserver.unobserve(entry.target);
+    })
+},
+{
+    threshold:0.5
+})
 
-function callback(entries) {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('showup');
-            console.log(entry);
-            console.log('hi');
-        }else {
-          entry.target.classList.remove('showup');
-        }
-    });
-}
+hiddenSects.forEach(hidden => {
+    sectionObserver.observe(hidden);
+});
 
-
-let observer = new IntersectionObserver(callback, options);
-
-let target = document.querySelectorAll('.hide');
-target.forEach((trgt) => observer.observe(trgt));
