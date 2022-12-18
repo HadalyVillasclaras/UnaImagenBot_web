@@ -6,15 +6,13 @@
 }
 
 :root{
-    --body-bg-color: #8ccfff;
+    --body-bg-color: #94b2d0;
     --text-primary: #0C044E;
     --background-opacity: 0.9;
     --h1-color: #0C044E;
 
     --gradient-top: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0));
     --gradient-bottom: linear-gradient(to top, #ffffff, rgba(255, 255, 255, 0));
-
-
 }
 
 [data-theme='dark'] {
@@ -24,8 +22,6 @@
     
     --gradient-top: linear-gradient(to bottom, #031518, rgba(255, 255, 255, 0));
     --gradient-bottom: linear-gradient(to top, #031518, rgba(255, 255, 255, 0));
-
-
 }
 
 #theme-toggle {
@@ -193,7 +189,7 @@ section {
     width: 100%;
     height: 100vh;
     background-repeat: no-repeat;
-
+    background-image: '';
 }
 
 .section-100pheight {
@@ -208,7 +204,7 @@ section > div {
     padding: 10% 8%;
 }
 
-section::before {
+.section-bg {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -222,6 +218,7 @@ section::before {
     z-index: -99;
     background-repeat: no-repeat;
     background-position: center top;
+    background-image: '';
 }
 
 @media only screen and (max-width: 900px) {
@@ -239,63 +236,29 @@ section::before {
 
 /* Sections bg */
 
-#home::before {
-    background-image: url(../assets/img/bg/bg1-light.png);
-}
-
-#intro::before {
-    background-image: url(../assets/img/bg/bg2-light.png);
-}
-
-#def::before {
-    background-image: url(../assets/img/bg/bg3-light.png);
-}
-
-#tb1::before {
-    background-image: url(../assets/img/bg/bg4-tw1-light.png); 
-
-}
-
-#tb2::before {
-    background-image: url(../assets/img/bg/bg5-tw2-light.png);
-}
-
-#tb3::before {
-    background-image: 
-        radial-gradient(
-            ellipse 30vw 15vh, rgba(255, 255, 255, 0.73), rgba(255, 255, 255, 0)
-        ),
-        url(../assets/img/bg/bg6-tw3-light.png);
-        background-position: 3vw 18vw, 0 0;
-}
-
-#end::before {
-    background-image: url(../assets/img/bg/bg7-end-light.png);
-
-}
 
 @media only screen and (max-width: 900px) {
-    #home::before {
+    #home.section-bg::before {
         background-image: url(../assets/img/bg/bg1-light-mb.png);
     }
 
-    #intro::before {
+    #intro.section-bg::before {
         background-image: url(../assets/img/bg/bg2-light-mb.png); 
     }
 
-    #def::before {
+    #def.section-bg::before {
         background-image: url(../assets/img/bg/bg3-light-mb.png);
     }
 
-    #tb1::before {
+    #tb1.section-bg::before {
         background-image: url(../assets/img/bg/bg4-tw1-light-mb.png); 
     }
 
-    #tb2::before {
+    #tb2.section-bg::before {
         background-image: url(../assets/img/bg/bg5-tw2-light-mb.png);
     }
 
-    #tb3::before {
+    #tb3.section-bg::before {
         background-image: 
         radial-gradient(
             ellipse 30vw 15vh, rgba(255, 255, 255, 0.73), rgba(255, 255, 255, 0)
@@ -304,7 +267,7 @@ section::before {
         background-position: 3vw 18vw, 0 0;
     }
 
-    #end::before {
+    #end.section-bg::before {
         background-image: url(../assets/img/bg/bg7-end-light-mb.png);
     }
 }
