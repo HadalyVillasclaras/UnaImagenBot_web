@@ -30,10 +30,10 @@
     height: 6000px;
     top: 0;
     z-index: -1;
+    filter: blur(50px);
 }
 
 #shine1 {
-    filter: blur(20px);
     opacity: 0.8;
     background-image: 
         radial-gradient( circle 400px, rgba(251, 253, 240, 0.89) 0%, rgba(0, 38, 255, 0) 100% ), 
@@ -44,7 +44,6 @@
 }
 
 #shine2 {
-    filter: blur(20px);
     opacity: 0.4;
     background-image: 
         radial-gradient( circle 500px,
@@ -60,7 +59,6 @@
 }
 
 #shine3 {
-    filter: blur(20px);
     opacity: 0.6;
     /* background-image: 
         radial-gradient( circle 400px,

@@ -4,7 +4,7 @@ const hiddenSects = document.querySelectorAll('.hidden');
 const sectionObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         entry.target.classList.toggle("on-show", entry.isIntersecting);
-        if (entry.isIntersecting) sectionObserver.unobserve(entry.target);
+        // if (entry.isIntersecting) sectionObserver.unobserve(entry.target);
     })
 },
 {
@@ -15,7 +15,7 @@ hiddenSects.forEach(hidden => {
     sectionObserver.observe(hidden);
 });
 
-//Lazy loading images
+//Lazy loading images (index imgs + bg)
 function preloadImages(img){
     const src = img.getAttribute('data-src');
 
@@ -68,9 +68,14 @@ const bgImgsObserver = new IntersectionObserver(entries => {
     });
 }, 
 {
+    rootMargin: "500px",
     threshold: 0
 });
 
 bgImgs.forEach(img => {
     bgImgsObserver.observe(img);
-})
+});
+
+
+// Blur bg intersection
+
