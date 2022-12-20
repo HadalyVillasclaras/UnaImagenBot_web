@@ -24,23 +24,6 @@
     --gradient-bottom: linear-gradient(to top, #031518, rgba(255, 255, 255, 0));
 }
 
-#theme-toggle {
-    z-index: 99;
-    position: fixed;
-    top: 2rem;
-    right: 3rem;
-    background-color: transparent;
-    border: none;
-}
-
-#moon-icon, #sun-icon {
-    width: 30px;
-    height: 30px;
-    fill: var(--text-primary);
-    stroke: var(--text-primary);
-    display: none;
-}
-
 body {
     min-height: 100vh; 
     background-color: var(--body-bg-color);    
@@ -157,6 +140,25 @@ h4 {
     }
 }
 
+/*Theme mode toggle*/
+#theme-toggle {
+    z-index: 99;
+    position: fixed;
+    top: 2rem;
+    right: 3rem;
+    background-color: transparent;
+    border: none;
+}
+
+#moon-icon, #sun-icon {
+    width: 30px;
+    height: 30px;
+    fill: var(--text-primary);
+    stroke: var(--text-primary);
+    display: none;
+}
+
+
 /*No wrap words*/
 .no-wrap{
     white-space: nowrap;
@@ -205,6 +207,18 @@ section > div {
     padding: 10% 8%;
 }
 
+
+@media only screen and (max-width: 900px) {
+    section#tb2 {
+        height: 100%;
+    }
+
+    section#tb3 {
+        height: 100%; 
+    }
+}
+
+/* Sections bg */
 .section-bg {
     position: absolute;
     width: 100%;
@@ -220,79 +234,18 @@ section > div {
     background-repeat: no-repeat;
     background-position: center top;
     background-image: '';
-    filter: blur(80px);
+    -webkit-filter: blur(40px);
+    -moz-filter: blur(40px);
+    -ms-filter: blur(40px);
+     filter: blur(40px);  
+     transform: translateZ(0); /*force the browser use GPU acceleration for that particular element instead of the CPU, so filter works in Safari :__)*/
 }
 
 @media only screen and (max-width: 900px) {
-    section#tb2 {
-        height: 100%;
+    .section-bg{
+        /* filter: blur(40px); */
     }
 
-    section#tb3 {
-        height: 100%; 
-    }
-
-    section#end { 
-    }
-}
-
-/* Sections bg */
-
-
-@media only screen and (max-width: 900px) {
-    #home.section-bg::before {
-        background-image: url(../assets/img/bg/bg1-light-mb.png);
-    }
-
-    #intro.section-bg::before {
-        background-image: url(../assets/img/bg/bg2-light-mb.png); 
-    }
-
-    #def.section-bg::before {
-        background-image: url(../assets/img/bg/bg3-light-mb.png);
-    }
-
-    #tb1.section-bg::before {
-        background-image: url(../assets/img/bg/bg4-tw1-light-mb.png); 
-    }
-
-    #tb2.section-bg::before {
-        background-image: url(../assets/img/bg/bg5-tw2-light-mb.png);
-    }
-
-    #tb3.section-bg::before {
-        background-image: 
-        radial-gradient(
-            ellipse 30vw 15vh, rgba(255, 255, 255, 0.73), rgba(255, 255, 255, 0)
-        ),
-        url(../assets/img/bg/bg6-tw3-light-mb.png);
-        background-position: 3vw 18vw, 0 0;
-    }
-
-    #end.section-bg::before {
-        background-image: url(../assets/img/bg/bg7-end-light-mb.png);
-    }
-}
-
-/*Ornaments*/
-.gradient-top {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    z-index: 1;
-    background-image: var(--gradient-top);
-}
-
-.gradient-bottom {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    z-index: 1;
-    background-image: var(--gradient-bottom);
 }
 
 /*Scrollbar*/
@@ -309,23 +262,6 @@ section > div {
     background: var(--text-primary); 
   }
 
-
-/*Animations*/
-@keyframes float {
-	0% {
-		drop-shadow: 0 5px 15px 0px rgb(255, 0, 0);
-		transform: translatey(0px)
-			translatex(0px);
-	}
-	50% {
-		drop-shadow: 0 25px 15px 0px rgb(255, 0, 0);
-		transform: translatey(-6px) translatex(-2px);
-	}
-	100% {
-		drop-shadow: 0 5px 15px 0px rgb(255, 0, 0);
-		transform: translatey(0px) translatex(0px);
-	}
-}
 
 /* S E C T I O N S */
 
