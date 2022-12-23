@@ -8,7 +8,11 @@
 :root{
     --body-bg-color: #94b2d0;
     --text-primary: #0C044E;
+
+    --theme-icon:#0C044E; 
     --background-opacity: 0.8;
+    --img-opacity: 0.8;
+
     --h1-color: #0C044E;
 
     --gradient-top: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0));
@@ -16,9 +20,13 @@
 }
 
 [data-theme='dark'] {
-    --text-primary: #cfd9e6;
+    --text-primary: #000121;;
     --body-bg-color: #001a33;
+
+    --theme-icon:#cce1f0; 
+
     --background-opacity: 0.3;
+    --img-opacity: 0.7;
     
     --gradient-top: linear-gradient(to bottom, #031518, rgba(255, 255, 255, 0));
     --gradient-bottom: linear-gradient(to top, #031518, rgba(255, 255, 255, 0));
@@ -27,7 +35,8 @@
 body {
     height: 100vh;
     background-color: var(--body-bg-color);    
-    overflow: hidden;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 *{
@@ -128,6 +137,8 @@ h4 {
     }
 }
 
+
+
 /*Theme mode toggle*/
 #theme-toggle {
     z-index: 99;
@@ -141,9 +152,13 @@ h4 {
 #moon-icon, #sun-icon {
     width: 30px;
     height: 30px;
-    fill: var(--text-primary);
-    stroke: var(--text-primary);
+    fill: var(--theme-icon);
+    stroke: var(--theme-icon);
     display: none;
+}
+
+img {
+    opacity: var(--img-opacity);
 }
 
 
@@ -177,15 +192,15 @@ button {
 /* Sections */
 
 article {
-    height: 100%;
-    overflow-y: scroll;
-    scroll-snap-type: y proximity;
+    /* height: 100%;
+    overflow-y: scroll; */
+    /* scroll-snap-type: y proximity; */
     /* scroll-padding-top: 6rem; */
 
 }
 section {
     position: relative;
-    scroll-snap-align: start;
+    /* scroll-snap-align: center; */
     width: 100%;
     height: 100vh;
     background-repeat: no-repeat;
@@ -221,11 +236,11 @@ section > div {
     background-repeat: no-repeat;
     background-position: center top;
     background-image: '';
-    -webkit-filter: blur(40px);
+    /* -webkit-filter: blur(40px);
     -moz-filter: blur(40px);
     -ms-filter: blur(40px);
-     filter: blur(40px);  
-     transform: translateZ(0); /*force the browser use GPU acceleration for that particular element instead of the CPU, so filter works in Safari :__)*/
+     filter: blur(40px);   */
+     /* transform: translateZ(0); force the browser use GPU acceleration for that particular element instead of the CPU, so filter works in Safari :__) */
 }
 
 @media only screen and (max-width: 900px) {
@@ -234,6 +249,7 @@ section > div {
     }
 
 }
+
 
 /*Scrollbar*/
 ::-webkit-scrollbar {
@@ -263,8 +279,19 @@ section > div {
     overflow: hidden;
 }
 
+#manual-frame {
+    width: 400px;
+    height: 280px;
+    background: rgba(255, 255, 255, 0.703);
+    border-radius: 23px;
+    border: 0.5px solid var(--text-primary);
+    background-image: url(                  );
+}
+
+
 #uib-frame {
     width: 50%; 
+    /* display: none; */
 }
 
 #uib-frame-mbl {
@@ -378,8 +405,6 @@ section > div {
     }
 }
 
-
-
 /*TwitterBot*/
 .tb1 { 
     height: 100%;
@@ -394,9 +419,7 @@ section > div {
 }
 
 .tb1 img {
-    position: relative;
     width: 37%;  
-    margin: 5% 0;
 }
 
 .twitter-timeline {
@@ -453,19 +476,43 @@ section > div {
 }
 
  .tb2-slide {
-     margin: 5% auto;
-     width: 80%;
+    position: relative;
+    margin: 5% auto;
+    width: 80%;
+    max-width: 900px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
  }
 
  .slide-imgs {
-     width: 50%;
-     margin: 10% auto;
+    width: 55%;
+    margin: 1% auto;
+    height: 200px;
+    position: relative;
+ }
+
+ .slide-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    transition: .7s;
+    opacity: 0;
+ }
+
+ .slide-img.active {
+    opacity: 1;
+    display: block;
+
  }
 
 .slide-botons { 
     display: flex;
     justify-content: space-between; 
     font-size: 1.5vw;
+    width: 100%;
 }
 
 .slide-boton {
@@ -507,6 +554,10 @@ section > div {
     .slide-botons img {
         width: 35px;
     }
+
+    .slide-img {
+    width: 115%;
+ }
 }
 
 @media only screen and (max-width: 900px) {
@@ -545,11 +596,6 @@ section > div {
 
 .tb3-link a{
     font-size: 6vw;
-}
-
-.tb3-link *{
-    vertical-align: middle;
-    height: 2.5em;
 }
 
 @media only screen and (max-width: 900px){

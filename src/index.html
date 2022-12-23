@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/magik.css">
+    <link rel="stylesheet" type="text/css" href="css/ornaments.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300&display=swap" rel="stylesheet">
@@ -19,6 +19,7 @@
     <div id="shine2"></div>
     <div id="shine3"></div>
 
+
     <!--Theme mode-->
     <!-- <button id="theme-toggle" type="button">
         <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth="1.5" >
@@ -27,12 +28,20 @@
         <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth="1.5">
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
         </svg>
-    </button> -->
-    <article>
+    </button>
+    <article> -->
+
+        <!-- Arrow -->
+        <svg version="1.1" id="to-down-arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 100" xml:space="preserve" height="100%" width="100%">
+            <path d="M24,73.2V0h-1.5v73.2C19.1,64,10.3,57.5,0,57.5V59c12.4,0,22.5,10.1,22.5,22.5H24C24,69.1,34.1,59,46.5,59v-1.5
+            C36.2,57.5,27.4,64,24,73.2z"></path>
+        </svg>
+    
         <!-----------Home----------->
         <section id="home">
             <span class="section-bg" data-bg-src="assets/img/bg/bg1-light.png" data-bg-src-mb="assets/img/bg/bg1-light-mb.png"></span>
             <div class="home-wrap hidden">
+                <!-- <div id="manual-frame"></div> -->
                 <img id="uib-frame" class="uib-animation" loading="lazy" data-src="assets/img/uib-frame.png" alt="Digital illustration of a plain horizontal position white rectangle with blue sparkles in the frame corners.">
                 <img id="uib-frame-mbl" class="uib-animation" loading="lazy" data-src="assets/img/uib-frame-mbl.png" alt="Digital illustration of a plain vertical position white rectangle with blue sparkles in the frame corners.">
                 <div class="h1-wrapper">
@@ -90,22 +99,22 @@
                 <h3>Cada twit propone una imagen posible de forma aleatoria y automática, sin intervención humana</h3>
                 <div class="tb2-slide">
                     <div class="slide-imgs"> 
-                        <img class="slide-img" loading="lazy" src="assets/img/tuit1.png" style="width: 100%;" alt="A tweet screenshot: Una imagen de algo extraño." >
-                        <img class="slide-img" loading="lazy" src="assets/img/tuit2.png" style="width: 100%;" alt="A tweet screenshot: Una imagen de un pic-nic." >
-                        <img class="slide-img" loading="lazy" src="assets/img/tuit3.png" style="width: 100%;" alt="A tweet screenshot: Una imagen de lo que está pasando." >
-                        <img class="slide-img" loading="lazy" src="assets/img/tuit4.png" style="width: 100%;" alt="A tweet screenshot: Una imagen que tiembla." >
-                        <img class="slide-img" loading="lazy" src="assets/img/tuit5.png" style="width: 100%;" alt="A tweet screenshot: Una imagen de una escalera." >
-                        <img class="slide-img" loading="lazy" src="assets/img/tuit6.png" style="width: 100%;" alt="A tweet screenshot: Una imagen de ella." >
-                        <img class="slide-img" loading="lazy" src="assets/img/tuit7.png" style="width: 100%;" alt="A tweet screenshot: Una imagen de un naranja intenso." >
-                        <img class="slide-img" loading="lazy" src="assets/img/tuit8.png" style="width: 100%;" alt="A tweet screenshot: Una imagen que viene." >
-                        <img class="slide-img" loading="lazy" src="assets/img/tuit9.png" style="width: 100%;" alt="A tweet screenshot: Una imagen de ayer." >
-                        <img class="slide-img" loading="lazy" src="assets/img/tuit10.png" style="width: 100%;"alt="A tweet screenshot: Una imagen de una tormenta." >
-                        <img class="slide-img" loading="lazy" src="assets/img/tuit11.png" style="width: 100%;"alt="A tweet screenshot: Una imagen de noche, en la cama." >
+                        <img class="slide-img active" loading="lazy" data-src="assets/img/tuit1.png" alt="A tweet screenshot: Una imagen de algo extraño." >
+                        <img class="slide-img" loading="lazy" data-src="assets/img/tuit2.png" alt="A tweet screenshot: Una imagen de un pic-nic." >
+                        <img class="slide-img" loading="lazy" data-src="assets/img/tuit3.png" alt="A tweet screenshot: Una imagen de lo que está pasando." >
+                        <img class="slide-img" loading="lazy" data-src="assets/img/tuit4.png" alt="A tweet screenshot: Una imagen que tiembla." >
+                        <img class="slide-img" loading="lazy" data-src="assets/img/tuit5.png" alt="A tweet screenshot: Una imagen de una escalera." >
+                        <img class="slide-img" loading="lazy" data-src="assets/img/tuit6.png" alt="A tweet screenshot: Una imagen de ella." >
+                        <img class="slide-img" loading="lazy" data-src="assets/img/tuit7.png" alt="A tweet screenshot: Una imagen de un naranja intenso." >
+                        <img class="slide-img" loading="lazy" data-src="assets/img/tuit8.png" alt="A tweet screenshot: Una imagen que viene." >
+                        <img class="slide-img" loading="lazy" data-src="assets/img/tuit9.png" alt="A tweet screenshot: Una imagen de ayer." >
+                        <img class="slide-img" loading="lazy" data-src="assets/img/tuit10.png" alt="A tweet screenshot: Una imagen de una tormenta." >
+                        <img class="slide-img" loading="lazy" data-src="assets/img/tuit11.png" alt="A tweet screenshot: Una imagen de noche, en la cama." >
                     </div>
 
                     <div class="slide-botons">
-                        <button class="slide-boton" id="slide-anterior" onclick="plusDivs(-1)"><img class="flecha" loading="lazy" data-src="assets/img/flecha.png"  alt="flecha"></button> 
-                        <button  class="slide-boton" id="slide-siguiente" onclick="plusDivs(1)"><img class="flecha" loading="lazy" data-src="assets/img/flecha.png"  alt="flecha"></button>
+                        <button class="slide-boton" id="prev-tweet"><img class="flecha" loading="lazy" data-src="assets/img/flecha.png"  alt="flecha"></button> 
+                        <button  class="slide-boton" id="next-tweet"><img class="flecha" loading="lazy" data-src="assets/img/flecha.png"  alt="flecha"></button>
                     </div>
 
                     <script>
@@ -125,12 +134,10 @@
                     <h2 id="tb3-icon">en Twitter</h2>
                 </div>
                 <div class="tb3-link">
-                    <img class="flecha" loading="lazy" src="assets/img/flecha.png"  alt="Arrow.">
                     <a href="http://www.twitter.com/unaimagenbot" target="blank">@unaimagenbot</a>
                 </div>
             </div>
         </section>
-
 
         <!-----------Ending----------->
         <section id="end" class="section-100pheight">
@@ -148,8 +155,10 @@
         </section>
     </article>
     <script src="./js/index.js" type="text/javascript"></script>
-    <script src="./js/parallax.js" type="text/javascript"></script>
+    <script src="./js/bg.js" type="text/javascript"></script>
     <script src="./js/intersection-observer.js"></script>
+    <script src="./js/tweet-slideshow.js"></script>
+
 
 </body>
 </html>

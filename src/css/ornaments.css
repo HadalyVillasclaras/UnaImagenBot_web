@@ -4,7 +4,7 @@
     /* color: transparent; */
     opacity: 0;
     transform: translateY(45px); 
-    transition: transform 0.8s, opacity 0.9s;
+    transition: transform 0.9s, opacity 0.9s;
 }
 
 .on-show{
@@ -19,8 +19,54 @@
     }
 }
 
+
+/* To down, to up arrows*/
+#to-down-arrow {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    cursor: default;
+    bottom: 1rem;
+    right: 0.8rem;
+    fill: var(--text-primary);
+    z-index: 9999999;
+    opacity: 0;
+    
+    animation: 
+        showup 3s 1.3s forwards,
+        fly 4s 2s infinite;
+
+    transition: fill 2s;
+}
+
+@keyframes showup {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fly {
+    0% {bottom: 1rem;}
+    50% {bottom: 2rem;}
+    100% {bottom: 1rem;}
+}
+
+#to-down-arrow:hover {
+    fill: transparent;
+}
+
+.hide-to-down-arrow {
+    fill: transparent !important;
+}
+
+@media only screen and (max-width: 900px){
+    #to-down-arrow {
+        width: 50px;
+        height: 50px;
+    }
+}
+
 /*Gradients*/
-.gradient-top {
+/* .gradient-top {
     position: fixed;
     top: 0;
     left: 0;
@@ -28,6 +74,12 @@
     height: 70px;
     z-index: 1;
     background-image: var(--gradient-top);
+    -webkit-filter: blur(20px);
+    -moz-filter: blur(20px);
+    -ms-filter: blur(20px);
+     filter: blur(20px);  
+     transform: translateZ(0);
+
 }
 
 .gradient-bottom {
@@ -41,16 +93,20 @@
 }
 
 /*Shiny parallax*/
-#shine1, #shine2, #shine3{
+/* #shine1, #shine2, #shine3{
     position: fixed; 
     width: 100%; 
     height: 6000px;
     top: 0;
-    z-index: -1;
-    filter: blur(50px);
-}
+    z-index: -1; 
+    /* -webkit-filter: blur(50px);
+    -moz-filter: blur(50px);
+    -ms-filter: blur(50px);  
+     /* filter: blur(50px);   
+     /* transform: translateZ(0);  
+}*/
 
-#shine1 {
+/* #shine1 {
     opacity: 0.8;
     background-image: 
         radial-gradient( circle 400px, rgba(251, 253, 240, 0.89) 0%, rgba(0, 38, 255, 0) 100% ), 
@@ -77,10 +133,6 @@
 
 #shine3 {
     opacity: 0.6;
-    /* background-image: 
-        radial-gradient( circle 400px,
-            rgb(252, 230, 252) 0%, rgba(0, 55, 255, 0) 100% 
-        ); */
     background-image: radial-gradient( circle 400px,
         hsla(0deg 0% 100%) 0%,
         hsla(216deg 90% 99%) 11%,
@@ -96,4 +148,5 @@
     background-repeat: no-repeat;
     background-size: 900px 900px;
     background-position: 110% 1300px;
-}
+} 
+ */

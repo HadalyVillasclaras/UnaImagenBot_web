@@ -8,7 +8,7 @@ const sectionObserver = new IntersectionObserver(entries => {
     })
 },
 {
-    threshold:0.5
+    threshold:0.3
 })
 
 hiddenSects.forEach(hidden => {
@@ -20,18 +20,14 @@ hiddenSects.forEach(hidden => {
 function preloadImages(img){
     const src = img.getAttribute('data-src');
 
-    if (!src) {
-        return
-    }
+    if (!src) { return }
 
     img.src = src;
 }
 
 function preloadBackgrounds(img){
     const src = img.getAttribute('data-bg-src');
-    if (!src) {
-        return //return plain bg?
-    }
+    if (!src) { return } //return plain bg?
 
     let imgUrl = 'url(' + './' + src + ')';
     img.style.backgroundImage = imgUrl;
@@ -74,7 +70,7 @@ const bgImgsObserver = new IntersectionObserver(entries => {
     });
 }, 
 {
-    rootMargin: "500px",
+    // rootMargin: "1080px",
     threshold: 0
 });
 
@@ -87,7 +83,7 @@ const bgImgsMbObserver = new IntersectionObserver(entries => {
     });
 }, 
 {
-    rootMargin: "500px",
+    // rootMargin: "1080px",
     threshold: 0
 });
 
