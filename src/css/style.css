@@ -9,6 +9,9 @@
     --body-bg-color: #94b2d0;
     --text-primary: #0C044E;
 
+    --shadow-color-hover: #1447c0;
+    --shadow-color-img: #b0cce7;
+
     --theme-icon:#0C044E; 
     --background-opacity: 0.8;
     --img-opacity: 0.8;
@@ -49,6 +52,7 @@ body {
 	vertical-align: baseline;
     color: var(--text-primary);
     box-sizing: border-box;
+    /* transform: translateZ(0); */
 }
 
 p { 
@@ -56,13 +60,18 @@ p {
     font-size: 2vw;
 }
 
+h1::selection, h2::selection, h3::selection, h4::selection, p::selection, a::selection, span::selection, br::selection{
+	text-shadow: 0 0 20px var(--shadow-color-hover);
+    color:white;
+}
+
 a {
     text-decoration: none;
 }
 
 a:hover {
-	text-shadow: 0 0 15px #ffffff;
-    cursor:pointer ;
+	text-shadow: 0 0 15px white;
+    cursor: pointer;
 }
 
 
@@ -138,27 +147,9 @@ h4 {
 }
 
 
-
-/*Theme mode toggle*/
-#theme-toggle {
-    z-index: 99;
-    position: fixed;
-    top: 2rem;
-    right: 3rem;
-    background-color: transparent;
-    border: none;
-}
-
-#moon-icon, #sun-icon {
-    width: 30px;
-    height: 30px;
-    fill: var(--theme-icon);
-    stroke: var(--theme-icon);
-    display: none;
-}
-
 img {
     opacity: var(--img-opacity);
+    -webkit-filter: drop-shadow(0px 0px 10px var(--shadow-color-img));
 }
 
 
@@ -186,11 +177,10 @@ button {
  }
 
  button:hover {
-	text-shadow: 0 0 15px #ffffff;
+	text-shadow: 0 0 15px var(--shadow-color-hover);
 }
 
 /* Sections */
-
 article {
     /* height: 100%;
     overflow-y: scroll; */
@@ -198,6 +188,7 @@ article {
     /* scroll-padding-top: 6rem; */
 
 }
+
 section {
     position: relative;
     /* scroll-snap-align: center; */
@@ -247,27 +238,24 @@ section > div {
     .section-bg{
         /* filter: blur(40px); */
     }
-
 }
-
 
 /*Scrollbar*/
 ::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 12px;
-  }
-  ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: #8FB9F0; 
-  }
+}
 
-  ::-webkit-scrollbar-track {
-    background: var(--text-primary); 
-  }
+::-webkit-scrollbar-thumb {
+border-radius: 10px;
+background-color: #8FB9F0; 
+}
 
+::-webkit-scrollbar-track {
+background: var(--text-primary); 
+}
 
 /* S E C T I O N S */
-
 /*Home*/
 .home-wrap {
     width: 100%;
@@ -288,10 +276,8 @@ section > div {
     background-image: url(                  );
 }
 
-
 #uib-frame {
     width: 50%; 
-    /* display: none; */
 }
 
 #uib-frame-mbl {
@@ -328,7 +314,6 @@ section > div {
 }
 
 @media only screen and (max-width: 900px) {
-
     .intro-wrap {
         width: 100%;
         min-width: 100%; 
@@ -418,8 +403,14 @@ section > div {
     width: 50%;
 }
 
-.tb1 img {
+.tb1-img-mask {
     width: 37%;  
+    mask-image: linear-gradient(white 68%, transparent);
+    -webkit-mask-image: linear-gradient(white 68%, transparent);
+
+}
+.tb1 img {
+    width: 100%;
 }
 
 .twitter-timeline {
@@ -486,7 +477,7 @@ section > div {
  }
 
  .slide-imgs {
-    width: 55%;
+    width: 45%;
     margin: 1% auto;
     height: 200px;
     position: relative;
@@ -511,8 +502,6 @@ section > div {
 .slide-botons { 
     display: flex;
     justify-content: space-between; 
-    font-size: 1.5vw;
-    width: 100%;
 }
 
 .slide-boton {
@@ -520,15 +509,53 @@ section > div {
     min-width: 100px;
     align-items: center;
     justify-content: space-around;
+    transform: translateX(0);
+    transition: transform 1s;
 }
 
-.slide-botons img {
-    width: 50px;
+.slide-botons svg {
+    width: 10%;
 }
 
-.slide-boton:first-child img {
-    transform: rotate(180deg);
+.slide-botons svg:hover {
+    -webkit-filter: drop-shadow(0px 0px 10px var(--shadow-color-hover));
+}
+
+.slide-boton:nth-child(1) svg {
+    transform: rotate(90deg);
 } 
+
+.slide-boton:nth-child(2) svg {
+    transform: rotate(-90deg);
+} 
+
+.slide-boton:nth-child(1):hover {
+    transform: translateX(-20px);
+}
+
+.slide-boton:nth-child(2):hover {
+    transform: translateX(20px);
+}
+
+.move-slide-left-arrow {
+    animation: move-left-arrow 3s 1.3s
+}
+
+@keyframes move-left-arrow {
+    0% {transform: translateX(0);}
+    50% {transform: translateX(-20px);}
+    100% {transform: translateX(0);}
+}
+
+.move-slide-right-arrow {
+    animation: move-right-arrow 3s 1.3s
+}
+
+@keyframes move-right-arrow {
+    0% {transform: translateX(0);}
+    50% {transform: translateX(20px);}
+    100% {transform: translateX(0);}
+}
 
 @media only screen and (max-width: 900px) {
     #tb2 {
