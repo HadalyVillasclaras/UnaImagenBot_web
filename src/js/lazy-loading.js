@@ -55,7 +55,7 @@ const bgImgsObserver = new IntersectionObserver(entries => {
     });
 }, 
 {
-    // rootMargin: "1080px",
+    rootMargin: "1000px",
     threshold: 0
 });
 

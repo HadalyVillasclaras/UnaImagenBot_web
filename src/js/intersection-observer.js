@@ -4,15 +4,34 @@ const hiddenSects = document.querySelectorAll('.hidden');
 const sectionObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         entry.target.classList.toggle("on-show", entry.isIntersecting);
-        // if (entry.isIntersecting) sectionObserver.unobserve(entry.target);
+        if (entry.isIntersecting) sectionObserver.unobserve(entry.target);
     })
 },
 {
-    threshold:0.3
+    threshold:0.5
 })
 
 hiddenSects.forEach(hidden => {
     sectionObserver.observe(hidden);
+});
+
+//Show unblur imgs
+const imgs = document.querySelectorAll('.blur');
+
+const imgsObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        entry.target.classList.toggle("unblur", entry.isIntersecting);
+        console.log('blrr');
+        // entry.target.classList.remove("blur", entry.isIntersecting);
+        // if (entry.isIntersecting) sectionObserver.unobserve(entry.target);
+    })
+},
+{
+    threshold:0.5
+})
+
+imgs.forEach(img => {
+    imgsObserver.observe(img);
 });
 
 //Move slideshow arrows on view

@@ -42,7 +42,7 @@ body {
     scroll-behavior: smooth;
 }
 
-*{
+* {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -149,8 +149,8 @@ h4 {
 
 img {
     opacity: var(--img-opacity);
-    -webkit-filter: drop-shadow(0px 0px 10px var(--shadow-color-img));
 }
+
 
 
 /*No wrap words*/
@@ -407,7 +407,6 @@ background: var(--text-primary);
     width: 37%;  
     mask-image: linear-gradient(white 68%, transparent);
     -webkit-mask-image: linear-gradient(white 68%, transparent);
-
 }
 .tb1 img {
     width: 100%;
@@ -429,11 +428,7 @@ background: var(--text-primary);
     }
 }
 
-@media only screen and (max-width: 769px) {
-    .tb1 img {
-        width: 110%; 
-    }
-}
+
 
 @media only screen and (max-width: 900px) {
     #tb1{
@@ -448,6 +443,11 @@ background: var(--text-primary);
 
     .tb1-def {
         width: 100%;
+    }
+
+    .tb1-img-mask {
+        width: 100%;  
+        
     }
 
     #tb-icon {
