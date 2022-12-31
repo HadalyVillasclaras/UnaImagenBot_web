@@ -14,31 +14,39 @@ function toDownArrow() {
 
 window.addEventListener('scroll', toDownArrow);
 
+//Pointer
+const mPointer = document.getElementById('mPointer');
+const mPointerStyle = mPointer.style;
+
+document.addEventListener('mousemove', event => {
+        mPointerStyle.top = `${ event.pageY - mPointer.offsetHeight/2 }px`;
+        mPointerStyle.left = `${ event.pageX - mPointer.offsetWidth/2 }px`;
+})
 
 //Theme mode
-let themeMode = 'light';
-const button = document.getElementById("theme-toggle");
+// let themeMode = 'light';
+// const button = document.getElementById("theme-toggle");
 
-let defaultMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-themeMode = localStorage.getItem('theme') || (defaultMode ? "dark" : "light"); 
+// let defaultMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+// themeMode = localStorage.getItem('theme') || (defaultMode ? "dark" : "light"); 
 
-//set css data
-document.documentElement.setAttribute('data-theme', themeMode); 
+// //set css data
+// document.documentElement.setAttribute('data-theme', themeMode); 
 
-const switchButton = () => {
-    themeMode === "light" 
-    ?
-        document.getElementById("moon-icon").style.display = "block"
-    :
-        document.getElementById("sun-icon").style.display = "block"
-}
+// const switchButton = () => {
+//     themeMode === "light" 
+//     ?
+//         document.getElementById("moon-icon").style.display = "block"
+//     :
+//         document.getElementById("sun-icon").style.display = "block"
+// }
 
-switchButton(); 
+// switchButton(); 
 
-button.addEventListener("click", () => {
-    let newTheme = themeMode === "light" ? "dark" : "light";
-    localStorage.setItem('theme', newTheme);
-    switchButton();
+// button.addEventListener("click", () => {
+//     let newTheme = themeMode === "light" ? "dark" : "light";
+//     localStorage.setItem('theme', newTheme);
+//     switchButton();
 
-    window.location.reload();
-});
+//     window.location.reload();
+// });

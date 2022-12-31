@@ -17,17 +17,19 @@ hiddenSects.forEach(hidden => {
 
 //Show unblur imgs
 const imgs = document.querySelectorAll('.blur');
-
+let th;
 const imgsObserver = new IntersectionObserver(entries => {
+    let device = window.matchMedia("(max-width: 900px)");
+    th =  device.matches ? 0 : 0.5;
+    
     entries.forEach(entry => {
         entry.target.classList.toggle("unblur", entry.isIntersecting);
-        console.log('blrr');
         // entry.target.classList.remove("blur", entry.isIntersecting);
         // if (entry.isIntersecting) sectionObserver.unobserve(entry.target);
     })
 },
 {
-    threshold:0.5
+    threshold: th
 })
 
 imgs.forEach(img => {

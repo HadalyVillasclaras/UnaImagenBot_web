@@ -7,10 +7,11 @@
 
 :root{
     --body-bg-color: #94b2d0;
-    --text-primary: #0C044E;
+    --text-primary: #0b135d;
 
     --shadow-color-hover: #1447c0;
     --shadow-color-img: #b0cce7;
+    --shadow-link: rgb(60, 121, 152);
 
     --theme-icon:#0C044E; 
     --background-opacity: 0.8;
@@ -20,6 +21,7 @@
 
     --gradient-top: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0));
     --gradient-bottom: linear-gradient(to top, #ffffff, rgba(255, 255, 255, 0));
+
 }
 
 [data-theme='dark'] {
@@ -55,6 +57,14 @@ body {
     /* transform: translateZ(0); */
 }
 
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 p { 
     font-family: 'Darker Grotesque', sans-serif; 
     font-size: 2vw;
@@ -67,11 +77,16 @@ h1::selection, h2::selection, h3::selection, h4::selection, p::selection, a::sel
 
 a {
     text-decoration: none;
+    text-shadow: 0 0 30px white;
+    display: inline-block;
+    transition: all 1s ease;
 }
 
 a:hover {
-	text-shadow: 0 0 15px white;
     cursor: pointer;
+    text-shadow: 0 0 10px var(--shadow-link);
+    -webkit-transform: translateY(-1rem); 
+    transition: all 1s ease;
 }
 
 
@@ -82,7 +97,9 @@ h1 {
 }
 
 h2 {
-    font-size: 4vw;
+    font-size: 3vw;
+    margin: 1.5vw 0;
+    line-height: 4vw;
 }
 
 h3 {
@@ -101,22 +118,24 @@ h4 {
     }
      
     h1{
-        font-size: 12vw;
+        font-size: 12.5vw;
     }
 
     h2 {
-        font-size: 10vw;
-        
+        font-size: 9.5vw;
+        margin: 3.5vw 0;
+        line-height: 15vw;
     }
 
     h3 {
-        font-size: 7.5vw; 
-        margin: 2.5vw 0;
+        font-size: 7.5vw;
+        margin: 3.5vw 0;
         line-height: 11vw;
+
     }
     
     h4 {
-        font-size: 5.1vw;
+        font-size: 5vw;
         margin-top: 3vw;
         line-height: 8vw;
     }
@@ -227,16 +246,21 @@ section > div {
     background-repeat: no-repeat;
     background-position: center top;
     background-image: '';
-    /* -webkit-filter: blur(40px);
-    -moz-filter: blur(40px);
-    -ms-filter: blur(40px);
-     filter: blur(40px);   */
+    -webkit-filter: blur(40px);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
      /* transform: translateZ(0); force the browser use GPU acceleration for that particular element instead of the CPU, so filter works in Safari :__) */
 }
 
 @media only screen and (max-width: 900px) {
     .section-bg{
         /* filter: blur(40px); */
+    }
+
+    section > div.home-wrap {
+        padding: 0% 8%;
     }
 }
 
@@ -252,7 +276,7 @@ background-color: #8FB9F0;
 }
 
 ::-webkit-scrollbar-track {
-background: var(--text-primary); 
+background: #d0def0; 
 }
 
 /* S E C T I O N S */
@@ -296,8 +320,7 @@ background: var(--text-primary);
 
     #uib-frame-mbl{
         display: block;
-        width: 100%; 
-        width: 115%;
+        width: 140%;
         overflow: hidden;
     }
 }
@@ -305,7 +328,7 @@ background: var(--text-primary);
 /*Intro*/
 .intro-wrap {
     position: relative;
-    width: 65%;
+    width: 75%;
     height: 100%;
     min-width: 700px; 
     display: flex;
@@ -338,6 +361,8 @@ background: var(--text-primary);
 
 .def-scroll-wrap {
     width: 53%;
+    mask-image: linear-gradient(white 80%, transparent);
+    -webkit-mask-image: linear-gradient(white 80%, transparent);
 }
 
 .def-scroll { 
@@ -346,6 +371,10 @@ background: var(--text-primary);
     height: 24em;
     overflow: -moz-scrollbars-vertical; 
     overflow-y: scroll;
+}
+
+.def-scroll p:nth-child(2) {
+    margin-bottom: 3rem;
 }
 
 .def-scroll::-webkit-scrollbar-track {
@@ -369,7 +398,6 @@ background: var(--text-primary);
         min-width: 99%;
         transform: rotate(90deg);
         right: 0;
-        margin: -9% 0;
     }
 
     .def-scroll { 
@@ -439,6 +467,7 @@ background: var(--text-primary);
         position: relative;
         flex-wrap: wrap;
         justify-content: center;
+        flex-direction: column-reverse;
     }
 
     .tb1-def {
@@ -447,6 +476,7 @@ background: var(--text-primary);
 
     .tb1-img-mask {
         width: 100%;  
+        margin: 4vh 0;
         
     }
 
@@ -502,23 +532,24 @@ background: var(--text-primary);
 .slide-botons { 
     display: flex;
     justify-content: space-between; 
+    margin: 0 3vh;
 }
 
 .slide-boton {
-    display: flex;
-    min-width: 100px;
-    align-items: center;
-    justify-content: space-around;
     transform: translateX(0);
-    transition: transform 1s;
+    transition: transform 0.7s;
+}
+
+.slide-boton:nth-child(1) {
+    text-align: left;
+}
+
+.slide-boton:nth-child(2) {
+    text-align: right;
 }
 
 .slide-botons svg {
     width: 10%;
-}
-
-.slide-botons svg:hover {
-    -webkit-filter: drop-shadow(0px 0px 10px var(--shadow-color-hover));
 }
 
 .slide-boton:nth-child(1) svg {
@@ -538,7 +569,7 @@ background: var(--text-primary);
 }
 
 .move-slide-left-arrow {
-    animation: move-left-arrow 3s 1.3s
+    animation: move-left-arrow 2s 1.3s
 }
 
 @keyframes move-left-arrow {
@@ -548,7 +579,7 @@ background: var(--text-primary);
 }
 
 .move-slide-right-arrow {
-    animation: move-right-arrow 3s 1.3s
+    animation: move-right-arrow 2s 1.3s
 }
 
 @keyframes move-right-arrow {
@@ -561,6 +592,13 @@ background: var(--text-primary);
     #tb2 {
         display: flex;
         align-items: center;
+    }
+    .slide-boton:nth-child(1):hover {
+        transform: translateX(0);
+    }
+    
+    .slide-boton:nth-child(2):hover {
+        transform: translateX(0);
     }
 
     .tb2 h3 {
@@ -575,7 +613,7 @@ background: var(--text-primary);
 
     .slide-imgs {
         width: 80%;
-        margin: 10vh auto 5vh auto;
+        margin: 10vh auto 1vh auto;
     }
 
     .slide-botons img {
@@ -600,11 +638,13 @@ background: var(--text-primary);
 /*tb3*/
 .tb3{
     position: relative; 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5% 8%;
 }
 
-.tb3-find{
-    padding-bottom: 25%;
-}
 
 #tb3-icon:after { 
     position: absolute;
@@ -622,9 +662,8 @@ background: var(--text-primary);
 }
 
 .tb3-link a{
-    font-size: 6vw;
+    font-size: 7vw;
 }
-
 @media only screen and (max-width: 900px){
     #tb3 {
         display: flex;
@@ -637,14 +676,8 @@ background: var(--text-primary);
     .tb3-find{
         padding-bottom: 55%;
     }
-
     .tb3-link a{
-        font-size: 9vw;
-    }
-
-    .tb3-link *{
-        vertical-align: middle;
-        height: 5vw;
+        font-size: 11vw;
     }
 
     #tb3-icon:after { 
