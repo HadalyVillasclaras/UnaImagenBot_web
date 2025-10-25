@@ -26,7 +26,6 @@ export class GridTextRevealer {
     try {
       const res = await fetch('/images.json')
       this.data = await res.json()
-      console.log('✅ Loaded JSON:', this.data)
     } catch (err) {
       console.error('Error loading JSON:', err)
     }
@@ -46,7 +45,6 @@ export class GridTextRevealer {
     card.classList.add('is-active')
 
     this.dataIndex = (this.dataIndex + 1) % this.data.length
-    console.log(`🪄 Revealed: "${text}" at index ${this.dataIndex}`)
   }
 
   hideText(card) {

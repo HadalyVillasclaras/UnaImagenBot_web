@@ -2,7 +2,7 @@
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
   --color-light: #ECF1F6;
-  --color-blue-light: #d5dee5;
+  --color-blue-light: #d7e1eb;
   --color-blue-default: #C4CFDA;
   --color-blue-dark-card: #192570;
   --color-blue-dark: #0E1457;
@@ -262,6 +262,39 @@ section {
   row-gap: 60px;
   width: 75vw;
 
+  .c-card {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+    background-color: #c8d3de;
+    background-color: transparent;
+  }
+  
+  .c-card.is-active {
+    transform: rotateY(180deg);
+  }
+  
+  .c-card__front,
+  .c-card__back {
+    padding: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .c-card__front {
+
+  }
+  .c-card__back {
+    transform: rotateY(180deg);
+    background-color: #c8d3de;
+    background-color: var(--color-blue-light);
+
+  }
+
   .c-card__txt p {
     opacity: 0;
     font-size: 16px;
@@ -273,6 +306,10 @@ section {
     opacity: 1;
   }
 
+  .c-card__star {
+    z-index: 9;
+
+  }
   .c-card__svg {
     width: 30px;
     height: 30px;
