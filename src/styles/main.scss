@@ -1,0 +1,21 @@
+:root {
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+
+  --color-blue-light: #ECF1F6;
+  --color-blue-default: #C4CFDA;
+  --color-blue-dark: #0E1457;
+
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #ce7575;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-mono);
+  font-size: 16px;
+}
