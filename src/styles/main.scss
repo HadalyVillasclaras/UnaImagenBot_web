@@ -39,6 +39,10 @@ body {
   height: 100%;
 }
 
+body.page-screen {
+  height: 100vh;
+  overflow: hidden;
+}
 body {
   font-family: var(--font-mono);
   font-size: 16px;
@@ -53,6 +57,10 @@ section {
   padding: var(--spc-m);
 }
 
+a {
+  all: unset;
+  cursor: pointer;
+}
 
 // Background gradient
 .bg-grad {
@@ -73,19 +81,28 @@ section {
   display: flex;
   align-items: center;
   padding: var(--spc-m);
-  // position: fixed;
+  position: fixed;
 }
+
+.page-screen {
+  .c-hdr,
+.c-footer {
+  opacity: 0;
+  transition: opacity .8s ease;
+
+}
+}
+
 
 .c-footer {
   bottom: 0;
-  opacity: 0;
   justify-content: space-between;
 }
 
 // SECTIONS
 // Intro
 .s-intro {
-  padding-top: 90px;
+  padding-top: 80px;
   justify-content: space-between;
 
   &>* {
@@ -99,17 +116,19 @@ section {
 
   &__cards {
     align-items: center;
-    justify-content: center;
+    justify-content: start;
+    top: 91px;
+    position: relative;
 
     & .c-card {
-      width: 400px;
+      width: 380px;
     }
   }
 }
 
 // Cards grid section
 .s-cards-grid {
-  padding: 80px!important;
+  padding: 80px !important;
   justify-content: center;
   align-items: center;
 }
@@ -120,9 +139,9 @@ section {
   background-color: var(--color-blue-light);
   padding: var(--spc-m);
   text-align: center;
-  aspect-ratio: 9/12;
+  aspect-ratio: 14/19;
   border: 1.2px solid var(--color-blue-dark-card);
-  
+
   &__txt {
     height: 100%;
     width: 100%;
@@ -195,7 +214,9 @@ section {
   flex-direction: column;
 }
 
-
+.g60 {
+  gap: 60px;
+}
 //Deck slider
 .deck-slider {
   position: relative;
@@ -270,11 +291,11 @@ section {
     background-color: #c8d3de;
     background-color: transparent;
   }
-  
+
   .c-card.is-active {
     transform: rotateY(180deg);
   }
-  
+
   .c-card__front,
   .c-card__back {
     padding: 12px;
@@ -285,10 +306,9 @@ section {
     height: 100%;
     backface-visibility: hidden;
   }
-  
-  .c-card__front {
 
-  }
+  .c-card__front {}
+
   .c-card__back {
     transform: rotateY(180deg);
     background-color: #c8d3de;
@@ -302,7 +322,7 @@ section {
     line-height: normal;
     transition: opacity 0.3s ease;
   }
-  
+
   .c-card.is-active .c-card__txt p {
     opacity: 1;
   }
@@ -311,6 +331,7 @@ section {
     z-index: 9;
 
   }
+
   .c-card__svg {
     width: 30px;
     height: 30px;
@@ -320,17 +341,17 @@ section {
     top: -15px;
     left: -15px;
   }
-  
+
   .c-card__star--tr {
     top: -15px;
     right: -31px;
   }
-  
+
   .c-card__star--bl {
     bottom: -31px;
     left: -15px;
   }
-  
+
   .c-card__star--br {
     bottom: -31px;
     right: -31px;
@@ -351,7 +372,7 @@ section {
 
   .c-card {
     width: 400px;
-  transition: opacity .8s ease;
+    transition: opacity .8s ease;
 
   }
 }
@@ -367,7 +388,7 @@ section {
   transition: transform 1s ease;
   cursor: pointer;
 
- 
+
 }
 
 .s-iso-card.flip .c-card.is-active {

@@ -1,9 +1,17 @@
+import { resolve } from 'path'
 
-import { dirname, resolve } from 'node:path'
 export default {
   css: {
-      postcss: {
-          config: "./postcss.config.cjs"
+    postcss: {
+      config: './postcss.config.cjs'
+    }
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        screen: resolve(__dirname, 'screen.html')
       }
+    }
   }
 }
