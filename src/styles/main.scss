@@ -43,7 +43,7 @@ body {
   font-family: var(--font-mono);
   font-size: 16px;
 
-  
+
   color: var(--color-blue-dark);
 }
 
@@ -61,12 +61,11 @@ section {
   top: 0;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(
-    200deg,
-    var(--color-blue-default) 40%,
-    var(--color-light) 100%
-  );
+  background: linear-gradient(200deg,
+      var(--color-blue-default) 40%,
+      var(--color-light) 100%);
 }
+
 // Header
 .c-hdr,
 .c-footer {
@@ -91,7 +90,6 @@ section {
 
   &>* {
     width: 50%;
-    border: 1px solid blue;
   }
 
   &__desc {
@@ -126,7 +124,12 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+
+    p {
+      max-width: 280px;
+      font-size: 20px;
+      line-height: 29px;
+    }
   }
 }
 
@@ -179,4 +182,64 @@ section {
 .flx {
   display: flex;
   gap: var(--spc-s);
+}
+
+
+
+//cards
+.deck-slider {
+  position: relative;
+  cursor: pointer;
+}
+
+
+.deck-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 1;
+  transition: 0.5s left, 0.5s top, 0.5s transform;
+  // background: linear-gradient(var(--color-light) 0%, var(--color-blue-light) 100%);
+}
+
+.deck-slide.active {
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+}
+
+.deck-slide[data-order="0"] {
+  top: 0px;
+  left: 0px;
+  z-index: 11;
+  transition-delay: 0s;
+}
+
+.deck-slide[data-order="1"] {
+  top: -30px;
+  left: 30px;
+  z-index: 10;
+  transition-delay: 0.1s;
+}
+
+.deck-slide[data-order="2"] {
+  top: -60px;
+  left: 60px;
+  z-index: 9;
+  transition-delay: 0.2s;
+}
+
+.deck-slide[data-order="3"] {
+  top: -90px;
+  left: 90px;
+  z-index: 8;
+  transition-delay: 0.3s;
+}
+
+.deck-slide[data-order="4"] {
+  top: -80px;
+  left: 80px;
+  z-index: 7;
+  transition-delay: 0.4s;
 }

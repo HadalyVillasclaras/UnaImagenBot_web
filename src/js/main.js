@@ -1,6 +1,7 @@
 import './../styles/main.scss'
+import { DeckSlider } from './DeckSlider'
 
 
 
 
-console.log('ge')
+new DeckSlider()
