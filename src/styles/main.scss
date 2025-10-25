@@ -262,6 +262,16 @@ section {
   row-gap: 60px;
   width: 75vw;
 
+  .c-card__txt p {
+    opacity: 0;
+    font-size: 16px;
+    line-height: normal;
+    transition: opacity 0.3s ease;
+  }
+  
+  .c-card.is-active .c-card__txt p {
+    opacity: 1;
+  }
 
   .c-card__svg {
     width: 30px;
