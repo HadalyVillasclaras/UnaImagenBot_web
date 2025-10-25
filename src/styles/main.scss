@@ -87,25 +87,30 @@ section {
   padding-top: 90px;
   justify-content: space-between;
 
-
   &>* {
     width: 50%;
   }
 
   &__desc {
     max-width: 560px;
-    display: flex;
-    flex-direction: column;
     gap: 20px;
   }
 
   &__cards {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
 
+    & .c-card {
+      width: 400px;
+    }
+  }
+}
+
+// Cards grid section
+.s-cards-grid {
+  padding: 80px!important;
+  justify-content: center;
+  align-items: center;
 }
 
 // Cards
@@ -113,9 +118,8 @@ section {
   position: relative;
   background-color: var(--color-blue-light);
   padding: var(--spc-m);
-  width: 400px;
-  height: 545px;
   text-align: center;
+  aspect-ratio: 9/12;
   border: 1.2px solid var(--color-blue-dark-card);
 
   &__txt {
@@ -142,8 +146,8 @@ section {
 }
 
 .c-card__svg {
-  width: 100%;
-  height: 100%;
+  width: 45px;
+  height: 45px;
   display: block;
 }
 
@@ -184,9 +188,14 @@ section {
   gap: var(--spc-s);
 }
 
+.flx-cl {
+  display: flex;
+  gap: var(--spc-s);
+  flex-direction: column;
+}
 
 
-//cards
+//Deck slider
 .deck-slider {
   position: relative;
   cursor: pointer;
@@ -242,4 +251,41 @@ section {
   left: 80px;
   z-index: 7;
   transition-delay: 0.4s;
+}
+
+// Cards grid
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  column-gap: 60px;
+  row-gap: 60px;
+  width: 75vw;
+
+
+  .c-card__svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .c-card__star--tl {
+    top: -15px;
+    left: -15px;
+  }
+  
+  .c-card__star--tr {
+    top: -15px;
+    right: -31px;
+  }
+  
+  .c-card__star--bl {
+    bottom: -31px;
+    left: -15px;
+  }
+  
+  .c-card__star--br {
+    bottom: -31px;
+    right: -31px;
+  }
+
 }
