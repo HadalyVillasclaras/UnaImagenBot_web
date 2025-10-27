@@ -181,6 +181,7 @@ h1 {
   text-align: center;
   aspect-ratio: 14/19;
   border: 1.2px solid var(--color-blue-dark-card);
+  box-shadow: 5px 5px 10px rgba(1, 1, 42, 0.073);
 
   &__txt {
     height: 100%;
@@ -195,6 +196,23 @@ h1 {
       line-height: 29px;
     }
   }
+}
+
+.deck-slide.active .c-card {
+  transition: transform .5s ease, background-color .5s ease, box-shadow .5s ease;
+
+  &:hover {
+    transform: translateY(3px) translateX(-3px);
+    transition: transform .5s ease, background-color .5s ease, box-shadow .5s ease;
+    background-color: #dee7f0;
+    box-shadow: 5px 5px 20px rgba(1, 1, 42, 0.204);
+
+    .c-card__svg use {
+      fill: #dee7f0;
+    }
+
+  }
+
 }
 
 .c-card__star {
@@ -276,6 +294,8 @@ h1 {
   position: relative;
   z-index: 1;
   opacity: 1;
+
+  
 }
 
 .deck-slide[data-order="0"] {
@@ -460,10 +480,12 @@ h1 {
   transition: opacity 2s ease;
 }
 
+
+// Dropdown
 .c-dropdown__extra {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease;
+  transition: max-height 0.8s ease;
 }
 
 
