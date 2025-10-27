@@ -1,35 +1,50 @@
 <!doctype html>
 <html lang="en">
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>unaimagenbot-web</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>unaimagenbot-web</title>
 </head>
+
 <body>
-  <header class="c-hdr">
-    <a href="/">
-      <h1>Una Imagen Bot</h1>
-    </a>
-  </header>
   <main>
     <div aria-hidden="true" class="bg-grad"></div>
-    <svg width="0" height="0" aria-hidden="true">
+    <svg style="display: none;" width="0" height="0" aria-hidden="true">
       <symbol id="card-star" viewBox="0 0 45 45">
         <path
           d="M26.8187 17.2547L26.9114 17.5633L27.2209 17.6572L42.3903 22.2431L27.218 26.8193L26.9084 26.9119L26.8155 27.2215L22.2296 42.3909L17.6534 27.2185L17.5597 26.9089L17.2512 26.8161L2.08077 22.2302L17.2541 17.654L17.5627 17.5603L17.6566 17.2517L22.2425 2.08134L26.8187 17.2547Z" />
       </symbol>
     </svg>
+
     <section class="s-intro flx">
-      <div class="s-intro__desc flx-cl">
-        <p>Una Imagen Bot es un proyecto que nace con el propósito de ofrecer una herramienta para estimular el
-          imaginario propio ante un contexto virtual cada vez más mediado por imágenes hiper-producidas y lógicas
-          algorítmicas que determinan lo que debe o no debe ser visto.</p>
-        <p>Es concebido como un ejercicio de contra-imaginación para explorar, desde el humor y el juego, nuevas
-          representaciones posibles de lo real; y esquivar -aunque solo sea por un fugaz instante- los modelos de
-          representación hegemónicos que nos llegan desde las plataformas de contenido audiovisual online.</p>
-        <p>Es concebido como un ejercicio de contra-imaginación para explorar, desde el humor y el juego, nuevas
-          representaciones posibles de lo real; y esquivar -aunque solo sea por un fugaz instante- los modelos de
-          representación hegemónicos que nos llegan desde las plataformas de contenido audiovisual online.</p>
+      <div class="s-intro__desc ">
+        <div class="flx-cl c-dropdown">
+          <div class="c-dropdown__txt flx-cl">
+            <div class="c-dropdown__main flx-cl">
+              <p>Una Imagen Bot es un programa generativo que produce imágenes posibles en forma de texto.</p>
+              <p>Es concebido como una herramienta para explorar el paisaje visual propio ante un contexto digital cada
+                vez más mediado por imágenes hiper-producidas y lógicas algorítmicas que determinan lo que debe o no
+                debe ser visto.</p>
+              <p>Una Imagen Bot es un ejercicio de contra-imaginación que invita a imaginar nuevas representaciones
+                posibles de lo real frente a los modelos de representación dominantes.</p>
+            </div>
+            <div class="c-dropdown__extra">
+              <div class="flx-cl">
+                <p class="c-cnfa">  <span>*</span><span>*</span><span>*</span><span>*</span><span>*</span>
+                  <span>*</span><span>*</span><span>*</span><span>*</span><span>*</span>
+                  <span>*</span><span>*</span><span>*</span><span>*</span><span>*</span>
+                  <span>*</span><span>*</span><span>*</span><span>*</span><span>*</span></p>
+                <p>Este texto aparece al expandir. Se utiliza para explicar más detalles sobre la funcionalidad, su
+                  lógica y las posibilidades que ofrece en el contexto digital.</p>
+                <p>Además, puedes incluir varios párrafos, imágenes, listas u otros elementos semánticos.</p>
+              </div>
+            </div>
+          </div>
+          <button class="c-dropdown__btn btn" aria-expanded="false">( + info )</button>
+
+
+        </div>
+
       </div>
       <div class="s-intro__cards flx-cl">
         <div class="deck-slider">
@@ -317,17 +332,25 @@
 
     <section class="s-iso-card flip">
       <div class="c-card">
-        <span class="c-card__star c-card__star--tl"><svg class="c-card__svg" width="25" height="25"><use href="#card-star" /></svg></span>
-        <span class="c-card__star c-card__star--tr"><svg class="c-card__svg" width="25" height="25"><use href="#card-star" /></svg></span>
-        <span class="c-card__star c-card__star--bl"><svg class="c-card__svg" width="25" height="25"><use href="#card-star" /></svg></span>
-        <span class="c-card__star c-card__star--br"><svg class="c-card__svg" width="25" height="25"><use href="#card-star" /></svg></span>
-    
+        <span class="c-card__star c-card__star--tl"><svg class="c-card__svg" width="25" height="25">
+            <use href="#card-star" />
+          </svg></span>
+        <span class="c-card__star c-card__star--tr"><svg class="c-card__svg" width="25" height="25">
+            <use href="#card-star" />
+          </svg></span>
+        <span class="c-card__star c-card__star--bl"><svg class="c-card__svg" width="25" height="25">
+            <use href="#card-star" />
+          </svg></span>
+        <span class="c-card__star c-card__star--br"><svg class="c-card__svg" width="25" height="25">
+            <use href="#card-star" />
+          </svg></span>
+
         <div class="c-card__front">
           <div class="c-card__txt">
             <p></p>
           </div>
         </div>
-    
+
         <div class="c-card__back">
           <div class="c-card__txt">
             <p style="opacity: 0;"></p>
@@ -335,13 +358,16 @@
         </div>
       </div>
     </section>
-    
+
 
 
   </main>
 
   <footer class="c-footer">
     <div class="flx g60">
+      <a href="/">
+        <h1>Una Imagen Bot</h1>
+      </a>
       <a href="/screen">Screen mode</a>
       <a target="_blank" href="https://x.com/unaimagenbot">Twitter Bot (finished)</a>
     </div>

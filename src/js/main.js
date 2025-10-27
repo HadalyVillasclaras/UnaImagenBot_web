@@ -1,5 +1,6 @@
 import './../styles/main.scss'
 import { DeckSlider } from './DeckSlider'
+import { Dropdown } from './DropDown.js';
 import { GridTextRevealer } from './GridTextRevealer'
 import { IsoCard } from './IsoCard';
 import { handleHeaderFooterVisibility } from './helpers.js';
@@ -14,5 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     new DeckSlider()
     new GridTextRevealer()
     new IsoCard()
+    new Dropdown()
   }
 })
