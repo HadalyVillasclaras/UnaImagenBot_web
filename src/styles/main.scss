@@ -92,6 +92,7 @@ h1 {
   width: fit-content;
   display: inline;
   color: var(--color-blue-dark);
+  font-size: 12px;
   transition: opacity .3s ease;
 
   &:hover {
@@ -148,9 +149,13 @@ h1 {
 
   &__desc {
     max-width: 570px;
-    gap: 20px;
-
+    gap: 4px!important;
+    align-items: start;
+    flex-direction: column;
    
+    a.btn {
+      margin-top: 0px;
+    }
    
   }
 

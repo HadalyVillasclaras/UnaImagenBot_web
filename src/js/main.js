@@ -3,6 +3,7 @@ import { DeckSlider } from './DeckSlider'
 import { Dropdown } from './DropDown.js';
 import { GridTextRevealer } from './GridTextRevealer'
 import { IsoCard } from './IsoCard';
+import { Translator } from './Translator.js';
 import { handleHeaderFooterVisibility } from './helpers.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new DeckSlider()
     new GridTextRevealer()
     new IsoCard()
-    new Dropdown()
+    new Dropdown();
+    new Translator();
   }
 })
