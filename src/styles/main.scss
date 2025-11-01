@@ -114,7 +114,6 @@ h1 {
   color: var(--color-blue-light);
 }
 
-
 //Buttons
 .btn {
   background-color: transparent;
@@ -153,6 +152,7 @@ h1 {
   padding: var(--spc-m);
   flex-direction: column;
   gap: 12px;
+  z-index: 9;
 
   @media only screen and (min-width: 1160px) {
     position: fixed;
@@ -193,7 +193,7 @@ h1 {
   padding-top: 40px;
   justify-content: space-between;
   flex-direction: column-reverse;
-  gap: 50px!important;
+  gap: 50px !important;
 
   @media only screen and (min-width: 1160px) {
     flex-direction: row;
@@ -267,14 +267,27 @@ h1 {
     align-items: center;
 
     p {
-      max-width: 190px;
-      font-size: 14px;
-      line-height: 20px;
+      max-width: 200px;
+      font-size: 16px;
+      line-height: 22px;
 
       @media only screen and (min-width: 1160px) {
         max-width: 280px;
         font-size: 20px;
         line-height: 29px;
+      }
+    }
+
+    &.iso {
+      p {
+        font-size: 17px;
+        line-height: 24px;
+  
+        @media only screen and (min-width: 1160px) {
+          max-width: 280px;
+          font-size: 20px;
+          line-height: 29px;
+        }
       }
     }
   }
@@ -311,8 +324,8 @@ h1 {
 }
 
 .c-card__svg {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   display: block;
 
   @media only screen and (min-width: 1160px) {
@@ -324,28 +337,33 @@ h1 {
 .c-card__svg use {
   fill: var(--color-blue-light);
   stroke: var(--color-blue-dark-card);
-  stroke-width: 1.2px;
+  stroke-width: 1.5px;
   stroke-linejoin: round;
+
+  @media only screen and (min-width: 1160px) {
+    stroke-width: 1.2px;
+
+  }
 }
 
 .c-card__star--tl {
-  top: -15px;
-  left: -15px;
+  top: -18px;
+  left: -18px;
 }
 
 .c-card__star--tr {
-  top: -15px;
-  right: -30px;
+  top: -18px;
+  right: -28px;
 }
 
 .c-card__star--bl {
-  bottom: -30px;
-  left: -15px;
+  bottom: -28px;
+  left: -18px;
 }
 
 .c-card__star--br {
-  bottom: -30px;
-  right: -30px;
+  bottom: -28px;
+  right: -28px;
 }
 
 @media only screen and (min-width: 1160px) {
@@ -415,8 +433,6 @@ h1 {
   position: relative;
   z-index: 1;
   opacity: 1;
-
-
 }
 
 .deck-slide[data-order="0"] {
@@ -461,23 +477,41 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 80vh;
 
+  @media only screen and (min-width: 1160px) {
+    min-height: unset;
+  }
 
   .c-card {
-    width: 400px;
     transition: opacity .8s ease;
-
+    width: 80vw;
+    @media only screen and (min-width: 1160px) {
+      width: 400px;
+    }
   }
 }
-
 
 // ISOLATED CARD
 .s-iso-card.flip .c-card {
   position: relative;
   perspective: 1000px;
   transform-style: preserve-3d;
-  transition: transform 1s ease;
   cursor: pointer;
+  transition: transform 1s ease, background-color .5s ease, box-shadow .5s ease;
+
+
+
+  &:hover {
+    transition: transform 1s ease, background-color .5s ease, box-shadow .5s ease;
+    background-color: #dee7f0;
+    box-shadow: 5px 5px 20px rgba(1, 1, 42, 0.204);
+
+    .c-card__svg use {
+      fill: #dee7f0;
+    }
+  }
+
 }
 
 .s-iso-card.flip .c-card.is-active {
@@ -513,14 +547,12 @@ h1 {
   transition: opacity 2s ease;
 }
 
-
 // Dropdown
 .c-dropdown__extra {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.8s ease;
 }
-
 
 // cenefa
 .c-cnfa {

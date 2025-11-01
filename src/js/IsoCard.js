@@ -19,9 +19,10 @@ export class IsoCard {
     if (this.fadeCard) this.fadeCard.addEventListener('click', () => this.handleInteraction())
 
     if (this.flipCard) {
-      this.frontText.textContent = this.data[this.consumeIndex()]
-      this.backText.textContent = this.data[this.consumeIndex()]
-      this.flipCard.addEventListener('click', () => this.handleFlip())
+      this.frontText.textContent = this.data[this.consumeIndex()];
+      this.backText.textContent = this.data[this.consumeIndex()];
+      this.flipCard.addEventListener('click', () => this.handleFlip());
+      this.startAutoFlip();
     }
   }
 
@@ -77,6 +78,13 @@ export class IsoCard {
         target.style.opacity = 1
       }
     }, 600)
+  }
+
+  startAutoFlip() {
+    if (this._autoFlipInterval) clearInterval(this._autoFlipInterval)
+    this._autoFlipInterval = setInterval(() => {
+      this.handleFlip()
+    }, 20000)
   }
 }
 
