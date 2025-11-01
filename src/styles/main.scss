@@ -3,6 +3,7 @@
 
   --color-light: #ECF1F6;
   --color-blue-light: #d7e1eb;
+  --color-blue-light-iso: #dee6ee;
   --color-blue-default: #C4CFDA;
   --color-blue-dark-card: #192570;
   --color-blue-dark: #0E1457;
@@ -497,6 +498,7 @@ h1 {
   position: relative;
   perspective: 1000px;
   transform-style: preserve-3d;
+  background-color: var(--color-blue-light-iso);
   cursor: pointer;
   transition: transform 1s ease, background-color .5s ease, box-shadow .5s ease;
 

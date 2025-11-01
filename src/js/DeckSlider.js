@@ -1,43 +1,31 @@
+import { ImageGenerator } from './ImageGenerator.js'
+
 export class DeckSlider {
   constructor() {
     this.container = document.querySelector('.deck-slider')
     this.slides = this.container.querySelectorAll('.deck-slide')
     this.activeIndex = 0
-    this.data = []
-    this.dataIndex = 0
     this.activeSlide = this.slides[this.activeIndex]
+    this.generator = new ImageGenerator()
 
     this.next = this.next.bind(this)
     this.updateSlides = this.updateSlides.bind(this)
-    this.updateCardTexts = this.updateCardTexts.bind(this)
+    this.fillSlides = this.fillSlides.bind(this)
 
     this.init()
   }
 
   async init() {
-    await this.loadData()
-    this.updateCardTexts()
+    await this.generator.ready
     this.updateSlides()
     this.container.addEventListener('click', this.next)
   }
 
-  async loadData() {
-    try {
-      const res = await fetch('/images.json')
-      this.data = await res.json()
-    } catch (err) {
-      console.error('Error loading JSON:', err)
+  async fillSlides() {
+    for (let i = 0; i < this.slides.length; i++) {
+      const textEl = this.slides[i].querySelector('.c-card__txt p')
+      if (textEl) textEl.textContent = await this.generator.getNext()
     }
-  }
-
-  updateCardTexts() {
-    this.slides.forEach((slide, i) => {
-      const realIndex = (this.activeIndex + i) % this.slides.length
-      const dataPos = (this.dataIndex + i) % this.data.length
-      const text = this.data[dataPos]
-      const textEl = this.slides[realIndex].querySelector('.c-card__txt p')
-      if (textEl) textEl.textContent = text
-    })
   }
 
   updateSlides() {
@@ -54,11 +42,9 @@ export class DeckSlider {
     })
   }
 
-  next() {
+  async next() {
     this.activeIndex = (this.activeIndex + 1) % this.slides.length
-    this.dataIndex = (this.dataIndex + 1) % this.data.length
-  
-    this.updateCardTexts()
+    await this.fillSlides()
     this.updateSlides()
   }
 }

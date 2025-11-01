@@ -1,4 +1,4 @@
-window.YTD.tweets.part0 = [
+export const tweetsData  = [
   {
     "tweet" : {
       "edit_info" : {

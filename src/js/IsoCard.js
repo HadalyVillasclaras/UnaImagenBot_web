@@ -1,3 +1,5 @@
+import { ImageGenerator } from './ImageGenerator.js'
+
 export class IsoCard {
   constructor() {
     this.fadeCard = document.querySelector('.s-iso-card.fade .c-card')
@@ -7,43 +9,38 @@ export class IsoCard {
     this.backText = this.flipCard ? this.flipCard.querySelector('.c-card__back .c-card__txt p') : null
     this.isFlipped = false
     this._flipTimer = null
-    this.data = []
-    this.dataIndex = 0
+    this._autoFlipInterval = null
+    this.generator = new ImageGenerator()
 
     this.init()
   }
 
   async init() {
-    await this.loadData()
-    if (this.textElement) this.updateText()
-    if (this.fadeCard) this.fadeCard.addEventListener('click', () => this.handleInteraction())
+    await this.generator.ready
+
+    if (this.fadeCard) {
+      this.fadeCard.addEventListener('click', () => {
+        this.handleInteraction()
+        this.resetAutoFlip()
+      })
+    }
 
     if (this.flipCard) {
-      this.frontText.textContent = this.data[this.consumeIndex()];
-      this.backText.textContent = this.data[this.consumeIndex()];
-      this.flipCard.addEventListener('click', () => this.handleFlip());
-      this.startAutoFlip();
+      this.flipCard.addEventListener('click', () => {
+        this.handleFlip()
+        this.resetAutoFlip()
+      })
+      this.startAutoFlip()
     }
   }
 
-  async loadData() {
-    try {
-      const res = await fetch('/images.json')
-      this.data = await res.json()
-    } catch (err) {
-      console.error('Error loading JSON:', err)
-    }
-  }
-
-  updateText() {
-    const text = this.data[this.dataIndex % this.data.length]
-    this.textElement.textContent = text
+  async updateText() {
+    this.textElement.textContent = await this.generator.getNext()
   }
 
   handleInteraction() {
-    this.animateCard(() => {
-      this.dataIndex = (this.dataIndex + 1) % this.data.length
-      this.updateText()
+    this.animateCard(async () => {
+      this.textElement.textContent = await this.generator.getNext()
     })
   }
 
@@ -55,15 +52,8 @@ export class IsoCard {
     }, 800)
   }
 
-  consumeIndex() {
-    const i = this.dataIndex % this.data.length
-    this.dataIndex = (this.dataIndex + 1) % this.data.length
-    return i
-  }
-
-  handleFlip() {
+  async handleFlip() {
     this.isFlipped = !this.isFlipped
-
     if (this._flipTimer) clearTimeout(this._flipTimer)
 
     if (this.frontText) this.frontText.style.opacity = 0
@@ -71,10 +61,10 @@ export class IsoCard {
 
     this.flipCard.classList.toggle('is-active', this.isFlipped)
 
-    this._flipTimer = setTimeout(() => {
+    this._flipTimer = setTimeout(async () => {
       const target = this.isFlipped ? this.backText : this.frontText
       if (target) {
-        target.textContent = this.data[this.consumeIndex()]
+        target.textContent = await this.generator.getNext()
         target.style.opacity = 1
       }
     }, 600)
@@ -82,9 +72,11 @@ export class IsoCard {
 
   startAutoFlip() {
     if (this._autoFlipInterval) clearInterval(this._autoFlipInterval)
-    this._autoFlipInterval = setInterval(() => {
-      this.handleFlip()
-    }, 20000)
+    this._autoFlipInterval = setInterval(() => this.handleFlip(), 20000)
+  }
+
+  resetAutoFlip() {
+    if (this._autoFlipInterval) clearInterval(this._autoFlipInterval)
+    this.startAutoFlip()
   }
 }
-
